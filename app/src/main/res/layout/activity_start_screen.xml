@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#692626"
+    tools:context=".StartScreen">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/raleway"
+        android:text="© All rights reserved. 2023"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCreateAcc"
+        android:layout_width="290dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/raleway_extrabold"
+        android:text="CREATE ACCOUNT"
+        android:textColor="#9B3838"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="290dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/raleway_extrabold"
+        android:text="SIGN IN"
+        android:textColor="#9B3838"
+        android:textSize="23sp"
+        android:onClick="goToSignIn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:layout_width="446dp"
+        android:layout_height="546dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logo_mseuf"
+            android:layout_width="550dp"
+            android:layout_height="550dp"
+            android:layout_gravity="start|bottom"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="40dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.5"
+            android:rotation="-15"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo_mseuf" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/titleGroup"
+            android:layout_width="273dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="184dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway"
+                android:text="University Dashboard"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="250dp"
+                android:layout_height="56dp"
+                android:fontFamily="@font/montserrat_black"
+                android:text="EUniBoard"
+                android:textColor="#FFFFFF"
+                android:textSize="43sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/title_top_bar"
+            android:layout_width="300dp"
+            android:layout_height="44dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="130dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/title_top_bar" />
+
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

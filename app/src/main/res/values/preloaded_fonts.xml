@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/montserrat_black</item>
+        <item>@font/montserrat_bold</item>
+        <item>@font/montserrat_medium</item>
+        <item>@font/palanquin_dark</item>
+        <item>@font/raleway</item>
+        <item>@font/raleway_bold</item>
+        <item>@font/raleway_extrabold</item>
+        <item>@font/raleway_semibold</item>
+    </array>
+</resources>
