@@ -7,6 +7,7 @@
     android:background="#692626"
     tools:context=".StartScreen">
 
+    <!-- All rights reserved -->
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -16,6 +17,7 @@
         android:text="© All rights reserved. 2023"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
+        android:alpha="0.65"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -53,8 +55,8 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <FrameLayout
-        android:layout_width="446dp"
-        android:layout_height="546dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -62,9 +64,9 @@
             android:id="@+id/logo_mseuf"
             android:layout_width="550dp"
             android:layout_height="550dp"
-            android:layout_gravity="start|bottom"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="-165dp"
             android:adjustViewBounds="true"
             android:alpha="0.5"
             android:rotation="-15"
@@ -73,10 +75,11 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/titleGroup"
-            android:layout_width="273dp"
-            android:layout_height="77dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="184dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="-50dp"
+            android:layout_marginTop="-170dp">
 
             <TextView
                 android:id="@+id/textView"
@@ -86,17 +89,23 @@
                 android:text="University Dashboard"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
+                app:autoSizeMaxTextSize="24sp"
+                app:autoSizeMinTextSize="16sp"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="250dp"
-                android:layout_height="56dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_black"
                 android:text="EUniBoard"
                 android:textColor="#FFFFFF"
                 android:textSize="43sp"
+                app:autoSizeMaxTextSize="72sp"
+                app:autoSizeMinTextSize="43sp"
+                app:autoSizeTextType="uniform"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -105,7 +114,7 @@
             android:id="@+id/title_top_bar"
             android:layout_width="300dp"
             android:layout_height="44dp"
-            android:layout_gravity="top"
+            android:layout_gravity="start|top"
             android:layout_marginTop="130dp"
             android:scaleType="fitStart"
             android:src="@drawable/title_top_bar" />
