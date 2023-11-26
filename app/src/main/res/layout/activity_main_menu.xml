@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#f8ebe8"
-    tools:context=".SignIn">
-
-    <FrameLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="#f8ebe8"
+        tools:context=".SignIn">
 
-        <ImageView
-            android:id="@+id/logo_mseuf"
-            android:layout_width="550dp"
-            android:layout_height="550dp"
-            android:layout_gravity="start|top"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="-40dp"
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/logo_mseuf"
+                android:layout_width="550dp"
+                android:layout_height="550dp"
+                android:layout_gravity="start|top"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="-40dp"
             android:alpha="0.15"
             android:rotation="-15"
             android:scaleType="fitXY"
@@ -150,7 +150,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="15dp"
                         android:clickable="true"
-                        android:background="@drawable/bg_subjects" />
+                        android:background="@drawable/bg_faculty" />
 
                     <ImageView
                         android:layout_width="40dp"
@@ -186,7 +186,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="15dp"
                         android:clickable="true"
-                        android:background="@drawable/bg_subjects" />
+                        android:background="@drawable/bg_payment" />
 
                     <ImageView
                         android:layout_width="40dp"
@@ -208,7 +208,7 @@
                         android:textSize="14dp" />
                 </FrameLayout>
 
-                <!-- PAYMENT -->
+                <!-- OSAS -->
                 <FrameLayout
                     android:id="@+id/btnOSAS"
                     android:layout_width="wrap_content"
@@ -220,7 +220,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="15dp"
                         android:clickable="true"
-                        android:background="@drawable/bg_subjects" />
+                        android:background="@drawable/bg_osas" />
 
                     <ImageView
                         android:layout_width="35dp"
@@ -244,9 +244,122 @@
             </LinearLayout>
         </FrameLayout>
 
-        <!-- WIDGET -->
+        <!-- SCHEDULE WIDGET -->
+        <FrameLayout
+            android:layout_width="170dp"
+            android:layout_height="160dp"
+            android:layout_gravity="start|bottom"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="240dp"
+            android:background="@drawable/bg_widget">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="5dp"
+                android:text="Schedule"
+                android:textSize="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="#701010" />
 
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/schedule_icon" />
+        </FrameLayout>
+
+        <!-- CAMPUS NAVIGATION WIDGET -->
+        <FrameLayout
+            android:layout_width="170dp"
+            android:layout_height="160dp"
+            android:layout_gravity="start|bottom"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="70dp"
+            android:background="@drawable/bg_widget">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="2dp"
+                android:text="Campus\nNavigation"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="#701010" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/campusnav_icon" />
+        </FrameLayout>
+
+        <!-- NEWS WIDGET -->
+        <FrameLayout
+            android:layout_width="180dp"
+            android:layout_height="330dp"
+            android:layout_gravity="end|bottom"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="70dp"
+            android:background="@drawable/bg_widget">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="50dp"
+                android:text="News"
+                android:textSize="17dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="#701010" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:rotation="-37.31"
+                android:background="@drawable/news_icon" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            >
+
+            <!-- PROFILE -->
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="25dp"
+                android:clickable="true"
+                android:src="@drawable/profile_icon"/>
+
+            <!-- HOME -->
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="25dp"
+                android:clickable="true"
+                android:src="@drawable/home_icon"/>
+
+            <!-- NOTIFICATION -->
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="15dp"
+                android:clickable="true"
+                android:src="@drawable/notification_icon"/>
+
+        </LinearLayout>
 
     </FrameLayout>
 
