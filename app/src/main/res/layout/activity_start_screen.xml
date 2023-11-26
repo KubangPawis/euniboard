@@ -33,6 +33,7 @@
         android:text="CREATE ACCOUNT"
         android:textColor="#9B3838"
         android:textSize="23sp"
+        android:onClick="goToEnrollMessage"
         app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

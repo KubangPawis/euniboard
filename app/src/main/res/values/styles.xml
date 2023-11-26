@@ -1,0 +1,8 @@
+<resources>
+    <style name="TextDropShadow" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:shadowColor">#9E000000</item>
+        <item name="android:shadowDy">5</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+</resources>

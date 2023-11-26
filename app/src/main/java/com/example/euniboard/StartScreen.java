@@ -18,4 +18,8 @@ public class StartScreen extends AppCompatActivity {
         Intent intent = new Intent(this, SignIn.class);
         startActivity(intent);
     }
+    public void goToEnrollMessage(View v) {
+        Intent intent = new Intent(this, EnrollMessage.class);
+        startActivity(intent);
+    }
 }

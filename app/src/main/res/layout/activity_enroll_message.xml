@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#692626"
+    tools:context=".StartScreen">
+
+    <!-- All rights reserved -->
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logo_mseuf"
+            android:layout_width="550dp"
+            android:layout_height="550dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="-165dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.5"
+            android:rotation="-15"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo_mseuf" />
+
+        <!-- TITLE AREA -->
+        <ImageView
+            android:id="@+id/titleBox"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_gravity="bottom"
+            android:scaleType="fitXY"
+            android:src="@drawable/enroll_title_box" />
+
+        <!-- MESSAGE AREA -->
+        <ImageView
+            android:id="@+id/textAreaBox"
+            android:layout_width="match_parent"
+            android:layout_height="430dp"
+            android:layout_gravity="bottom"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/enroll_message_box" />
+
+        <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="395dp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:rotation="9"
+            android:text="Hello Envergan!"
+            android:textAppearance="@style/TextDropShadow"
+            android:textColor="#FFFFFF"
+            android:textSize="42dp" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="132dp"
+            android:layout_height="49dp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/red_rounded_button"
+            android:elevation="10dp"
+            android:fontFamily="@font/raleway_extrabold"
+            android:onClick="goToSignIn"
+            android:text="Next"
+            android:textAppearance="@style/TextDropShadow"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lblRights"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="24dp"
+            android:alpha="0.65"
+            android:fontFamily="@font/raleway"
+            android:text="© All rights reserved. 2023"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/lblMessage"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="220dp"
+            android:fontFamily="@font/raleway_semibold"
+            android:lineSpacingExtra="2dp"
+            android:text="Welcome to MSEUF!\n\nThe best school in the world (cap). Here you will experience the best learning that you will ever experience in your life. Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
+            android:textSize="15dp"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/lblInstructions"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="180dp"
+            android:fontFamily="@font/raleway_semibold"
+            android:lineSpacingExtra="2dp"
+            android:text="Click START to create your Student Account!"
+            android:textSize="15dp"
+            android:textColor="#FFFFFF" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imgMascot"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_marginBottom="500dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mseuf_mascot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteY="50dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
