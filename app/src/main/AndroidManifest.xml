@@ -26,6 +26,8 @@
         <activity android:name=".SignIn" android:screenOrientation="portrait"/>
         <activity android:name=".MainMenu" android:screenOrientation="portrait"/>
         <activity android:name=".EnrollMessage" android:screenOrientation="portrait"/>
+        <activity android:name=".EnrollPersonal" android:screenOrientation="portrait"/>
+        <activity android:name=".EnrollAccount" android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"

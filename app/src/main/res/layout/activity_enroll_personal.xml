@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#692626"
+    tools:context=".EnrollPersonal">
+
+    <FrameLayout
+        android:id="@+id/topImage"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@drawable/enroll_ellipse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="200dp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/enroll_personal_img">
+        </ImageView>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/lblPersonalInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:text="Personal Info"
+        android:textColor="#FFFFFF"
+        android:textSize="32dp"
+        android:fontFamily="@font/montserrat_black"
+        app:layout_constraintTop_toBottomOf="@id/topImage"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/lblStepNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="step 1 of 5"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        android:fontFamily="@font/raleway_italic"
+        app:layout_constraintTop_toBottomOf="@id/lblPersonalInfo"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/txtLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/dsos_txtfield"
+        app:layout_constraintTop_toBottomOf="@id/lblStepNumber"
+        app:layout_constraintBottom_toTopOf="@id/txtFirstName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <EditText
+            android:layout_width="235dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="4dp"
+            android:hint="Last Name"
+            android:textColorHint="#CCCCCC"
+            android:scrollHorizontally="true"
+            android:background="@android:color/transparent"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/txtFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/dsos_txtfield"
+        app:layout_constraintTop_toBottomOf="@id/txtLastName"
+        app:layout_constraintBottom_toTopOf="@id/txtMiddleName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <EditText
+            android:layout_width="235dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="4dp"
+            android:hint="First Name"
+            android:textColorHint="#CCCCCC"
+            android:scrollHorizontally="true"
+            android:background="@android:color/transparent"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/txtMiddleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/dsos_txtfield"
+        app:layout_constraintTop_toBottomOf="@id/txtFirstName"
+        app:layout_constraintBottom_toTopOf="@id/txtBirthDate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <EditText
+            android:layout_width="235dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="4dp"
+            android:hint="Middle Name"
+            android:textColorHint="#CCCCCC"
+            android:scrollHorizontally="true"
+            android:background="@android:color/transparent"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/txtBirthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/dsos_txtfield"
+        app:layout_constraintTop_toBottomOf="@id/txtMiddleName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <EditText
+            android:layout_width="235dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="4dp"
+            android:hint="Birth Date (calendar selectable)"
+            android:textColorHint="#CCCCCC"
+            android:scrollHorizontally="true"
+            android:background="@android:color/transparent"/>
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="132dp"
+        android:layout_height="49dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/red_rounded_button"
+        android:elevation="10dp"
+        android:fontFamily="@font/raleway_extrabold"
+        android:onClick="goToEnrollAccount"
+        android:text="Next"
+        android:textAppearance="@style/TextDropShadow"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
