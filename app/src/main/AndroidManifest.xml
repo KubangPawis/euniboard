@@ -32,6 +32,7 @@
         <activity android:name=".EnrollAdditional" android:screenOrientation="portrait"/>
         <activity android:name=".EnrollEducation" android:screenOrientation="portrait"/>
         <activity android:name=".EnrollCongratulations" android:screenOrientation="portrait"/>
+        <activity android:name=".ViewSubjects" android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"

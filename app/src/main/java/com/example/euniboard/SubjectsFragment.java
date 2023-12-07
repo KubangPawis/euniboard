@@ -1,6 +1,7 @@
 package com.example.euniboard;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -56,7 +57,9 @@ public class SubjectsFragment extends Fragment {
 
         //EVENTS
         ImageView btnClose = rootView.findViewById(R.id.btnClose);
+        Button btnViewSubjects = rootView.findViewById(R.id.btnViewSubjects);
         btnClose.setOnClickListener(e -> exitFragment());
+        btnViewSubjects.setOnClickListener(e -> goToViewSubjects(e));
 
         return rootView;
     }
@@ -85,6 +88,10 @@ public class SubjectsFragment extends Fragment {
         renderScript.destroy();
 
         return outputBitmap;
+    }
+    public void goToViewSubjects(View v) {
+        Intent intent = new Intent(getActivity(), ViewSubjects.class);
+        startActivity(intent);
     }
 
     public void exitFragment() {

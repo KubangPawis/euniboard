@@ -60,7 +60,6 @@ public class OsasFragment extends Fragment {
         view.setDrawingCacheEnabled(false);
         return screenshot;
     }
-
     public static Bitmap blurBitmap(Context context, Bitmap inputBitmap, float radius) {
         if (inputBitmap == null) return null;
 
@@ -80,7 +79,6 @@ public class OsasFragment extends Fragment {
 
         return outputBitmap;
     }
-
     public void exitFragment() {
         getActivity().onBackPressed();
     }
