@@ -193,7 +193,7 @@
                 android:layout_height="49dp"
                 android:layout_gravity="bottom|center"
                 android:layout_marginTop="25dp"
-                android:background="@drawable/red_rounded_button"
+                android:background="@drawable/btn_red_rounded_drop"
                 android:elevation="10dp"
                 android:fontFamily="@font/raleway_extrabold"
                 android:text="Next"

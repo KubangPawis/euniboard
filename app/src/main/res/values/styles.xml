@@ -1,8 +1,14 @@
 <resources>
+
     <style name="TextDropShadow" parent="@android:style/TextAppearance">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:shadowColor">#9E000000</item>
         <item name="android:shadowDy">5</item>
         <item name="android:shadowRadius">4</item>
+    </style>
+
+    <style name="Widget.Theme.EUniBoard.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 </resources>

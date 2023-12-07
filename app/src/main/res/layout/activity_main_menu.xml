@@ -8,6 +8,7 @@
         tools:context=".MainMenu">
 
         <FrameLayout
+            android:id="@+id/screenLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
