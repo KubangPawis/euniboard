@@ -8,12 +8,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
@@ -21,11 +15,12 @@ import android.renderscript.ScriptIntrinsicBlur;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 
-public class SubjectsFragment extends Fragment {
-    public SubjectsFragment() {
+import androidx.fragment.app.Fragment;
+
+public class PaymentFragment extends Fragment {
+    public PaymentFragment() {
         // Required empty public constructor
     }
 
@@ -38,7 +33,7 @@ public class SubjectsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         //BLUR BG METHOD
-        View rootView = inflater.inflate(R.layout.fragment_subjects, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_payment, container, false);
 
         // Get the main activity's content as a bitmap
         Bitmap backgroundBitmap = getScreenShot(getActivity().getWindow().getDecorView().getRootView());

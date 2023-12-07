@@ -21,12 +21,12 @@
         />
 
     <TextView
-        android:id="@+id/lblTitleSubjects"
+        android:id="@+id/lblTitleOSAS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
         android:fontFamily="@font/montserrat_black"
-        android:text="Subjects"
+        android:text="OSAS"
         android:textColor="#FFFFFF"
         android:textSize="42dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,59 +34,73 @@
         app:layout_constraintRight_toRightOf="parent"/>
 
     <Button
-        android:id="@+id/btnViewSubjects"
-        android:layout_width="232dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="70dp"
-        android:background="@drawable/btn_white_rounded_drop"
-        android:text="View Subjects"
-        android:textAllCaps="false"
-        android:textColor="#692626"
-        android:fontFamily="@font/raleway_semibold"
-        app:layout_constraintTop_toBottomOf="@id/lblTitleSubjects"
-        app:layout_constraintLeft_toLeftOf="@id/lblTitleSubjects"
-        app:layout_constraintRight_toRightOf="@id/lblTitleSubjects"/>
-
-    <Button
-        android:id="@+id/btnViewGrades"
+        android:id="@+id/btnCounseling"
         android:layout_width="232dp"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/btn_white_rounded_drop"
-        android:text="View Grades"
+        android:text="Counseling Interview"
         android:textAllCaps="false"
         android:textColor="#692626"
         android:fontFamily="@font/raleway_semibold"
-        app:layout_constraintTop_toBottomOf="@id/btnViewSubjects"
-        app:layout_constraintLeft_toLeftOf="@id/btnViewSubjects"
-        app:layout_constraintRight_toRightOf="@id/btnViewSubjects"/>
+        app:layout_constraintTop_toBottomOf="@id/lblTitleOSAS"
+        app:layout_constraintLeft_toLeftOf="@id/lblTitleOSAS"
+        app:layout_constraintRight_toRightOf="@id/lblTitleOSAS"/>
 
     <Button
-        android:id="@+id/btnViewFaculty"
+        android:id="@+id/btnRecords"
         android:layout_width="232dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/btn_white_rounded_drop"
-        android:text="View Faculty"
+        android:text="Student Personnel Records"
         android:textAllCaps="false"
         android:textColor="#692626"
         android:fontFamily="@font/raleway_semibold"
-        app:layout_constraintTop_toBottomOf="@id/btnViewGrades"
-        app:layout_constraintLeft_toLeftOf="@id/btnViewGrades"
-        app:layout_constraintRight_toRightOf="@id/btnViewGrades"/>
+        app:layout_constraintTop_toBottomOf="@id/btnCounseling"
+        app:layout_constraintLeft_toLeftOf="@id/btnCounseling"
+        app:layout_constraintRight_toRightOf="@id/btnCounseling"/>
 
     <Button
-        android:id="@+id/btnEvalFaculty"
+        android:id="@+id/btnPsych"
         android:layout_width="232dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/btn_white_rounded_drop"
-        android:text="Evaluate Faculty"
+        android:text="Psychological Testing"
         android:textAllCaps="false"
         android:textColor="#692626"
         android:fontFamily="@font/raleway_semibold"
-        app:layout_constraintTop_toBottomOf="@id/btnViewFaculty"
-        app:layout_constraintLeft_toLeftOf="@id/btnViewFaculty"
-        app:layout_constraintRight_toRightOf="@id/btnViewFaculty"/>
+        app:layout_constraintTop_toBottomOf="@id/btnRecords"
+        app:layout_constraintLeft_toLeftOf="@id/btnRecords"
+        app:layout_constraintRight_toRightOf="@id/btnRecords"/>
+
+    <Button
+        android:id="@+id/btnExitInterview"
+        android:layout_width="232dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_white_rounded_drop"
+        android:text="Exit Interview"
+        android:textAllCaps="false"
+        android:textColor="#692626"
+        android:fontFamily="@font/raleway_semibold"
+        app:layout_constraintTop_toBottomOf="@id/btnPsych"
+        app:layout_constraintLeft_toLeftOf="@id/btnPsych"
+        app:layout_constraintRight_toRightOf="@id/btnPsych"/>
+
+    <Button
+        android:id="@+id/btnSPS"
+        android:layout_width="232dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_white_rounded_drop"
+        android:text="SPS Evaluation"
+        android:textAllCaps="false"
+        android:textColor="#692626"
+        android:fontFamily="@font/raleway_semibold"
+        app:layout_constraintTop_toBottomOf="@id/btnExitInterview"
+        app:layout_constraintLeft_toLeftOf="@id/btnExitInterview"
+        app:layout_constraintRight_toRightOf="@id/btnExitInterview"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
