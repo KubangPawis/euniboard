@@ -33,7 +33,6 @@
         android:text="CREATE ACCOUNT"
         android:textColor="#9B3838"
         android:textSize="23sp"
-        android:onClick="goToEnrollMessage"
         app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -49,7 +48,6 @@
         android:text="SIGN IN"
         android:textColor="#9B3838"
         android:textSize="23sp"
-        android:onClick="goToSignIn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -78,9 +76,8 @@
             android:id="@+id/titleGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="-50dp"
-            android:layout_marginTop="-170dp">
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="184dp">
 
             <TextView
                 android:id="@+id/textView"

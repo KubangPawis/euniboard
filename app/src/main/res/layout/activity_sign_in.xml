@@ -31,7 +31,6 @@
         android:text="SIGN IN"
         android:textColor="#9B3838"
         android:textSize="23sp"
-        android:onClick="goToMainMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -58,8 +57,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/titleGroup"
-            android:layout_width="273dp"
-            android:layout_height="77dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="184dp">
 
@@ -76,8 +75,8 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="250dp"
-                android:layout_height="56dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_black"
                 android:text="EUniBoard"
                 android:textColor="#FFFFFF"
@@ -210,7 +209,7 @@
             android:text="Keep me logged in"
             android:textColor="#FFFFFF"
             android:textSize="15dp"
-            android:thumbTextPadding="20dp" />
+            android:thumbTextPadding="30dp" />
 
     </FrameLayout>
 

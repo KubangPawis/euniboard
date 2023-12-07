@@ -28,6 +28,10 @@
         <activity android:name=".EnrollMessage" android:screenOrientation="portrait"/>
         <activity android:name=".EnrollPersonal" android:screenOrientation="portrait"/>
         <activity android:name=".EnrollAccount" android:screenOrientation="portrait"/>
+        <activity android:name=".EnrollProgram" android:screenOrientation="portrait"/>
+        <activity android:name=".EnrollAdditional" android:screenOrientation="portrait"/>
+        <activity android:name=".EnrollEducation" android:screenOrientation="portrait"/>
+        <activity android:name=".EnrollCongratulations" android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"

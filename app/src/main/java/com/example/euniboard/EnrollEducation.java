@@ -7,20 +7,20 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SignIn extends AppCompatActivity {
+public class EnrollEducation extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_enroll_education);
 
         //EVENTS
-        Button btnSignIn = findViewById(R.id.btnSignIn);
-        btnSignIn.setOnClickListener(e -> goToMainMenu(e));
+        Button btnNext = findViewById(R.id.btnNext);
+        btnNext.setOnClickListener(e -> goToCongratulations(e));
     }
 
-    public void goToMainMenu(View v) {
-        Intent intent = new Intent(this, MainMenu.class);
+    public void goToCongratulations(View v) {
+        Intent intent = new Intent(this, EnrollCongratulations.class);
         startActivity(intent);
     }
 }
