@@ -5,39 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GradesNA_Fragment"
-    android:background="#66FFDED7"
+    android:background="#f8ebe8"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <FrameLayout
-
-            android:id="@+id/pnlSemCMB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/semester_cmb_container"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="190dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="start|center"
-                android:layout_marginLeft="27dp"
-                android:layout_marginBottom="3dp" />
-
-        </FrameLayout>
-
         <LinearLayout
-            android:id="@+id/linearGrades"
+            android:id="@+id/linearFaculty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/pnlSemCMB"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
