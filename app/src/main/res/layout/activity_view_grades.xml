@@ -10,47 +10,11 @@
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#66FFDED7" />
-
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:background="#66FFDED7"
         android:layout_marginTop="75dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
-
-        <FrameLayout
-
-            android:id="@+id/pnlSemCMB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/semester_cmb_container">
-
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="190dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="start|center"
-                android:layout_marginLeft="27dp"
-                android:layout_marginBottom="3dp" />
-
-        </FrameLayout>
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="265dp"
-            android:layout_marginLeft="125dp"
-            android:textAlignment="center"
-            android:fontFamily="@font/montserrat_medium"
-            android:textSize="16dp"
-            android:textColor="#701010"
-            android:text="Grades for this period is \ncurrently unavailable." />
-    </FrameLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <FrameLayout
         android:id="@+id/pnlHeader"
