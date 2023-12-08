@@ -15,17 +15,27 @@ public class ViewSubjects extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_subjects);
 
-        ImageView btnAdd = findViewById(R.id.btnAdd);
-        btnAdd.setOnClickListener(e -> openSubjects(e));
+        boolean isAvailable = false;
 
+        if(isAvailable) {
+            openSubjectsAvailable();
+        }
+        else {
+            openSubjectsNotAvailable();
+        }
     }
 
-    public void openSubjects(View v) {
-        SubjectsAvailableFragment subjectsAvailFragment = new SubjectsAvailableFragment();
-
+    public void openSubjectsAvailable() {
+        SubjectsAvailableFragment frag = new SubjectsAvailableFragment();
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainer, subjectsAvailFragment)
-                .addToBackStack(null)
+                .replace(R.id.fragmentContainer, frag)
+                .commit();
+    }
+
+    public void openSubjectsNotAvailable() {
+        SubjectsNA_Fragment frag = new SubjectsNA_Fragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragmentContainer, frag)
                 .commit();
     }
 }
