@@ -26,10 +26,12 @@
     </FrameLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/programLblGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topImage">
 
         <TextView
@@ -41,7 +43,7 @@
             android:textColor="#FFFFFF"
             android:textSize="32dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lblStepNumber"
@@ -52,16 +54,25 @@
             android:textColor="#FFFFFF"
             android:textSize="15dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lblSelectProgram"/>
+            app:layout_constraintTop_toBottomOf="@id/lblSelectProgram" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/programContentGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/programLblGroup">
 
         <FrameLayout
             android:id="@+id/pnlYearLvl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:background="@drawable/dsos_txtfield"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lblStepNumber">
+            android:background="@drawable/dsos_txtfield">
 
             <Spinner
                 android:id="@+id/spinYearLvl"
@@ -79,9 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/dsos_txtfield"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pnlYearLvl">
+            android:background="@drawable/dsos_txtfield">
 
             <Spinner
                 android:id="@+id/spinProgram"
@@ -99,9 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/dsos_txtfield"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pnlProgram">
+            android:background="@drawable/dsos_txtfield">
 
             <Spinner
                 android:id="@+id/spinSpecialization"
@@ -113,13 +120,14 @@
                 android:background="@android:color/transparent" />
 
         </FrameLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnNext"
         android:layout_width="183dp"
         android:layout_height="49dp"
         android:layout_gravity="bottom|center"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/btn_red_rounded_drop"
         android:elevation="10dp"
@@ -128,8 +136,9 @@
         android:textAppearance="@style/TextDropShadow"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/programContentGroup"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

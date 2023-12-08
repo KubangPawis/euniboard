@@ -25,131 +25,134 @@
         </ImageView>
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/lblAccountCreation"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/accountLblGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"
-        android:text="Account Creation"
-        android:textColor="#FFFFFF"
-        android:textSize="32dp"
-        android:fontFamily="@font/montserrat_black"
-        app:layout_constraintTop_toBottomOf="@id/topImage"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topImage">
 
-    <TextView
-        android:id="@+id/lblStepNumber"
+        <TextView
+            android:id="@+id/lblAccountCreation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_black"
+            android:text="Account Creation"
+            android:textColor="#FFFFFF"
+            android:textSize="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblStepNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_italic"
+            android:text="step 2 of 5"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblAccountCreation" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/accountContentGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:text="step 2 of 5"
-        android:textColor="#FFFFFF"
-        android:textSize="15dp"
-        android:fontFamily="@font/raleway_italic"
-        app:layout_constraintTop_toBottomOf="@id/lblAccountCreation"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/accountLblGroup">
 
-    <FrameLayout
-        android:id="@+id/txtEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/dsos_txtfield"
-        app:layout_constraintTop_toBottomOf="@id/lblStepNumber"
-        app:layout_constraintBottom_toTopOf="@id/txtRetypeEmail"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        <FrameLayout
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dsos_txtfield">
 
-        <EditText
-            android:layout_width="235dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start|center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="4dp"
-            android:hint="Email"
-            android:textColorHint="#CCCCCC"
-            android:background="@android:color/transparent"/>
+            <EditText
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent"
+                android:hint="Email"
+                android:textColorHint="#CCCCCC" />
 
-    </FrameLayout>
+        </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/txtRetypeEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/dsos_txtfield"
-        app:layout_constraintTop_toBottomOf="@id/txtEmail"
-        app:layout_constraintBottom_toTopOf="@id/txtPassword"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        <FrameLayout
+            android:id="@+id/txtRetypeEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/dsos_txtfield">
 
-        <EditText
-            android:layout_width="235dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start|center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="4dp"
-            android:hint="Retype Email"
-            android:textColorHint="#CCCCCC"
-            android:background="@android:color/transparent"/>
+            <EditText
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent"
+                android:hint="Retype Email"
+                android:textColorHint="#CCCCCC" />
 
-    </FrameLayout>
+        </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/txtPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/dsos_txtfield"
-        app:layout_constraintTop_toBottomOf="@id/txtRetypeEmail"
-        app:layout_constraintBottom_toTopOf="@id/txtRetypePassword"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        <FrameLayout
+            android:id="@+id/txtPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/dsos_txtfield">
 
-        <EditText
-            android:layout_width="235dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start|center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="4dp"
-            android:hint="Password"
-            android:textColorHint="#CCCCCC"
-            android:inputType="textPassword"
-            android:scrollHorizontally="true"
-            android:background="@android:color/transparent"/>
+            <EditText
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:scrollHorizontally="true"
+                android:textColorHint="#CCCCCC" />
 
-    </FrameLayout>
+        </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/txtRetypePassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/dsos_txtfield"
-        app:layout_constraintTop_toBottomOf="@id/txtPassword"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        <FrameLayout
+            android:id="@+id/txtRetypePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/dsos_txtfield">
 
-        <EditText
-            android:layout_width="235dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start|center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="4dp"
-            android:hint="Retype Password"
-            android:textColorHint="#CCCCCC"
-            android:inputType="textPassword"
-            android:scrollHorizontally="true"
-            android:background="@android:color/transparent"/>
+            <EditText
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent"
+                android:hint="Retype Password"
+                android:inputType="textPassword"
+                android:scrollHorizontally="true"
+                android:textColorHint="#CCCCCC" />
 
-    </FrameLayout>
+        </FrameLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnNext"
         android:layout_width="183dp"
         android:layout_height="49dp"
         android:layout_gravity="bottom|center"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/btn_red_rounded_drop"
         android:elevation="10dp"
@@ -158,8 +161,9 @@
         android:textAppearance="@style/TextDropShadow"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/accountContentGroup"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
