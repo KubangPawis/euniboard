@@ -17,7 +17,9 @@
             android:id="@+id/pnlSemCMB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/semester_cmb_container">
+            android:background="@drawable/semester_cmb_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <Spinner
@@ -35,7 +37,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/pnlSemCMB">
+            app:layout_constraintTop_toBottomOf="@+id/pnlSemCMB"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
         </LinearLayout>
 
