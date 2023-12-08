@@ -25,95 +25,95 @@
         </ImageView>
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/lblSelectProgram"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"
-        android:text="Select Program"
-        android:textColor="#FFFFFF"
-        android:textSize="32dp"
-        android:fontFamily="@font/montserrat_black"
-        app:layout_constraintTop_toBottomOf="@id/topImage"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topImage">
 
-    <TextView
-        android:id="@+id/lblStepNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:text="step 3 of 5"
-        android:textColor="#FFFFFF"
-        android:textSize="15dp"
-        android:fontFamily="@font/raleway_italic"
-        app:layout_constraintTop_toBottomOf="@id/lblSelectProgram"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        <TextView
+            android:id="@+id/lblSelectProgram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_black"
+            android:text="Select Program"
+            android:textColor="#FFFFFF"
+            android:textSize="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-    <FrameLayout
-        android:id="@+id/pnlYearLvl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/dsos_txtfield"
-        app:layout_constraintTop_toBottomOf="@id/lblStepNumber"
-        app:layout_constraintBottom_toTopOf="@id/pnlProgram"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        <TextView
+            android:id="@+id/lblStepNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_italic"
+            android:text="step 3 of 5"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblSelectProgram"/>
 
-        <Spinner
-            android:id="@+id/spinYearLvl"
-            android:layout_width="235dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start|center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="4dp"
-            android:background="@android:color/transparent" />
+        <FrameLayout
+            android:id="@+id/pnlYearLvl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/dsos_txtfield"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblStepNumber">
 
-    </FrameLayout>
+            <Spinner
+                android:id="@+id/spinYearLvl"
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent" />
 
-    <FrameLayout
-        android:id="@+id/pnlProgram"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/dsos_txtfield"
-        app:layout_constraintTop_toBottomOf="@id/pnlYearLvl"
-        app:layout_constraintBottom_toTopOf="@id/pnlSpecialization"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        </FrameLayout>
 
-        <Spinner
-            android:id="@+id/spinProgram"
-            android:layout_width="235dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start|center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="4dp"
-            android:background="@android:color/transparent" />
+        <FrameLayout
+            android:id="@+id/pnlProgram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/dsos_txtfield"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pnlYearLvl">
 
-    </FrameLayout>
+            <Spinner
+                android:id="@+id/spinProgram"
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent" />
 
-    <FrameLayout
-        android:id="@+id/pnlSpecialization"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/dsos_txtfield"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pnlProgram">
+        </FrameLayout>
 
-        <Spinner
-            android:id="@+id/spinSpecialization"
-            android:layout_width="235dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start|center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="4dp"
-            android:background="@android:color/transparent" />
+        <FrameLayout
+            android:id="@+id/pnlSpecialization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/dsos_txtfield"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pnlProgram">
 
-    </FrameLayout>
+            <Spinner
+                android:id="@+id/spinSpecialization"
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent" />
+
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/btnNext"

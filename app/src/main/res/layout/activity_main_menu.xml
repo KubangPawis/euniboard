@@ -28,52 +28,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/logo_mseuf" />
 
-        <TextView
-            android:id="@+id/titleHeader"
-            android:layout_width="268dp"
-            android:layout_height="55dp"
-            android:layout_gravity="start"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="55dp"
-            android:fontFamily="@font/montserrat_black"
-            android:text="EUniBoard"
-            android:textColor="#701010"
-            android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/nameGroup"
-            android:layout_width="271dp"
-            android:layout_height="100dp"
-            android:layout_gravity="start"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="130dp">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="Good Morning!"
-                android:textColor="#701010"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="268dp"
-                android:layout_height="55dp"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="Hi Satoru"
-                android:textColor="#701010"
-                android:textSize="42sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <ImageView
+            <ImageView
             android:id="@+id/bg_orange"
             android:layout_width="match_parent"
             android:layout_height="530dp"
@@ -91,298 +46,355 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="80dp">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <!-- MAIN PANEL -->
-                <FrameLayout
-                    android:id="@+id/mainPanel"
-                    android:layout_width="320dp"
-                    android:layout_height="120dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/mainmenu_panel"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent">
+                <TextView
+                    android:id="@+id/titleHeader"
+                    android:layout_width="268dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="start"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="55dp"
+                    android:fontFamily="@font/montserrat_black"
+                    android:text="EUniBoard"
+                    android:textColor="#701010"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <LinearLayout
-                        android:layout_width="265dp"
-                        android:layout_height="match_parent"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/contentGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/titleHeader"
+                    app:layout_constraintBottom_toTopOf="@id/navigationBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/nameGroup"
+                        android:layout_width="271dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Good Morning!"
+                            android:textColor="#701010"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="268dp"
+                            android:layout_height="55dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Hi Satoru"
+                            android:textColor="#701010"
+                            android:textSize="42sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- MAIN PANEL -->
+                    <FrameLayout
+                        android:id="@+id/mainPanel"
+                        android:layout_width="310dp"
+                        android:layout_height="100dp"
                         android:layout_gravity="center"
-                        android:orientation="horizontal">
+                        android:background="@drawable/mainmenu_panel"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/nameGroup">
 
-                        <!-- SUBJECTS -->
-                        <FrameLayout
-                            android:id="@+id/btnSubjects"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="265dp"
                             android:layout_height="match_parent"
-                            android:layout_marginRight="15dp">
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="55dp"
-                                android:layout_height="55dp"
-                                android:layout_gravity="center"
-                                android:layout_marginBottom="15dp"
-                                android:background="@drawable/bg_subjects"
-                                android:clickable="true" />
-
-                            <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center"
-                                android:layout_marginBottom="15dp"
-                                android:clickable="true"
-                                android:src="@drawable/subjects_icon" />
-
-                            <TextView
-                                android:id="@+id/lblSubjects"
+                            <!-- SUBJECTS -->
+                            <FrameLayout
+                                android:id="@+id/btnSubjects"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|bottom"
-                                android:layout_marginBottom="20dp"
-                                android:fontFamily="@font/palanquin_dark"
-                                android:text="Subjects"
-                                android:textColor="#2D3D5C"
-                                android:textSize="14dp" />
-                        </FrameLayout>
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="15dp">
 
-                        <!-- FACULTY -->
-                        <FrameLayout
-                            android:id="@+id/btnFaculty"
+                                <TextView
+                                    android:layout_width="55dp"
+                                    android:layout_height="55dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@drawable/bg_subjects"
+                                    android:clickable="true" />
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginBottom="10dp"
+                                    android:clickable="true"
+                                    android:src="@drawable/subjects_icon" />
+
+                                <TextView
+                                    android:id="@+id/lblSubjects"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center|bottom"
+                                    android:layout_marginBottom="5dp"
+                                    android:fontFamily="@font/palanquin_dark"
+                                    android:text="Subjects"
+                                    android:textColor="#2D3D5C"
+                                    android:textSize="14dp" />
+                            </FrameLayout>
+
+                            <!-- FACULTY -->
+                            <FrameLayout
+                                android:id="@+id/btnFaculty"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="15dp">
+
+                                <TextView
+                                    android:layout_width="55dp"
+                                    android:layout_height="55dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@drawable/bg_faculty"
+                                    android:clickable="true" />
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_marginBottom="6dp"
+                                    android:clickable="true"
+                                    android:src="@drawable/faculty_icon" />
+
+                                <TextView
+                                    android:id="@+id/lblFaculty"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center|bottom"
+                                    android:layout_marginBottom="5dp"
+                                    android:fontFamily="@font/palanquin_dark"
+                                    android:text="Faculty"
+                                    android:textColor="#2D3D5C"
+                                    android:textSize="14dp" />
+                            </FrameLayout>
+
+                            <!-- PAYMENT -->
+                            <FrameLayout
+                                android:id="@+id/btnPayment"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="15dp">
+
+                                <TextView
+                                    android:layout_width="55dp"
+                                    android:layout_height="55dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@drawable/bg_payment"
+                                    android:clickable="true" />
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginBottom="6dp"
+                                    android:clickable="true"
+                                    android:src="@drawable/payment_icon" />
+
+                                <TextView
+                                    android:id="@+id/lblPayment"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center|bottom"
+                                    android:layout_marginBottom="5dp"
+                                    android:fontFamily="@font/palanquin_dark"
+                                    android:text="Payment"
+                                    android:textColor="#2D3D5C"
+                                    android:textSize="14dp" />
+                            </FrameLayout>
+
+                            <!-- OSAS -->
+                            <FrameLayout
+                                android:id="@+id/btnOSAS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="55dp"
+                                    android:layout_height="55dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@drawable/bg_osas"
+                                    android:clickable="true" />
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginBottom="10dp"
+                                    android:clickable="true"
+                                    android:src="@drawable/osas_icon" />
+
+                                <TextView
+                                    android:id="@+id/lblOSAS"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center|bottom"
+                                    android:layout_marginBottom="5dp"
+                                    android:fontFamily="@font/palanquin_dark"
+                                    android:text="OSAS"
+                                    android:textColor="#2D3D5C"
+                                    android:textSize="14dp" />
+                            </FrameLayout>
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <!-- SCHEDULE WIDGET -->
+                    <FrameLayout
+                        android:id="@+id/pnlSchedule"
+                        android:layout_width="170dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/bg_widget"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/pnlNews"
+                        app:layout_constraintTop_toBottomOf="@id/mainPanel">
+
+                        <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginRight="15dp">
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|center"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Schedule"
+                            android:textColor="#701010"
+                            android:textSize="16dp" />
 
-                            <TextView
-                                android:layout_width="55dp"
-                                android:layout_height="55dp"
-                                android:layout_gravity="center"
-                                android:layout_marginBottom="15dp"
-                                android:background="@drawable/bg_faculty"
-                                android:clickable="true" />
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/schedule_icon" />
+                    </FrameLayout>
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="2dp"
-                                android:layout_marginBottom="10dp"
-                                android:clickable="true"
-                                android:src="@drawable/faculty_icon" />
-
-                            <TextView
-                                android:id="@+id/lblFaculty"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|bottom"
-                                android:layout_marginBottom="20dp"
-                                android:fontFamily="@font/palanquin_dark"
-                                android:text="Faculty"
-                                android:textColor="#2D3D5C"
-                                android:textSize="14dp" />
-                        </FrameLayout>
-
-                        <!-- PAYMENT -->
-                        <FrameLayout
-                            android:id="@+id/btnPayment"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginRight="15dp">
-
-                            <TextView
-                                android:layout_width="55dp"
-                                android:layout_height="55dp"
-                                android:layout_gravity="center"
-                                android:layout_marginBottom="15dp"
-                                android:background="@drawable/bg_payment"
-                                android:clickable="true" />
-
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_gravity="center"
-                                android:layout_marginBottom="10dp"
-                                android:clickable="true"
-                                android:src="@drawable/payment_icon" />
-
-                            <TextView
-                                android:id="@+id/lblPayment"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|bottom"
-                                android:layout_marginBottom="20dp"
-                                android:fontFamily="@font/palanquin_dark"
-                                android:text="Payment"
-                                android:textColor="#2D3D5C"
-                                android:textSize="14dp" />
-                        </FrameLayout>
-
-                        <!-- OSAS -->
-                        <FrameLayout
-                            android:id="@+id/btnOSAS"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:layout_width="55dp"
-                                android:layout_height="55dp"
-                                android:layout_gravity="center"
-                                android:layout_marginBottom="15dp"
-                                android:background="@drawable/bg_osas"
-                                android:clickable="true" />
-
-                            <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center"
-                                android:layout_marginBottom="15dp"
-                                android:clickable="true"
-                                android:src="@drawable/osas_icon" />
-
-                            <TextView
-                                android:id="@+id/lblOSAS"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|bottom"
-                                android:layout_marginBottom="20dp"
-                                android:fontFamily="@font/palanquin_dark"
-                                android:text="OSAS"
-                                android:textColor="#2D3D5C"
-                                android:textSize="14dp" />
-                        </FrameLayout>
-                    </LinearLayout>
-                </FrameLayout>
-
-                <!-- SCHEDULE WIDGET -->
-                <FrameLayout
-                    android:id="@+id/pnlSchedule"
-                    android:layout_width="170dp"
-                    android:layout_height="160dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_widget"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@id/pnlNews"
-                    app:layout_constraintTop_toBottomOf="@id/mainPanel">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top|center"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/montserrat_bold"
-                        android:text="Schedule"
-                        android:textColor="#701010"
-                        android:textSize="16dp" />
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/schedule_icon" />
-                </FrameLayout>
-
-                <!-- CAMPUS NAVIGATION WIDGET -->
-                <FrameLayout
-                    android:id="@+id/pnlNav"
-                    android:layout_width="170dp"
-                    android:layout_height="160dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/bg_widget"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@id/pnlNews"
-                    app:layout_constraintTop_toBottomOf="@id/pnlSchedule"
-                    app:layout_constraintBottom_toBottomOf="parent">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top|center"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/montserrat_bold"
-                        android:text="Campus\nNavigation"
-                        android:textColor="#701010" />
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginLeft="10dp"
+                    <!-- CAMPUS NAVIGATION WIDGET -->
+                    <FrameLayout
+                        android:id="@+id/pnlNav"
+                        android:layout_width="170dp"
+                        android:layout_height="160dp"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/campusnav_icon" />
-                </FrameLayout>
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/bg_widget"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/pnlNews"
+                        app:layout_constraintTop_toBottomOf="@id/pnlSchedule">
 
-                <!-- NEWS WIDGET -->
-                <FrameLayout
-                    android:id="@+id/pnlNews"
-                    android:layout_width="180dp"
-                    android:layout_height="330dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_widget"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/mainPanel"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|center"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Campus\nNavigation"
+                            android:textColor="#701010" />
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/campusnav_icon" />
+                    </FrameLayout>
+
+                    <!-- NEWS WIDGET -->
+                    <FrameLayout
+                        android:id="@+id/pnlNews"
+                        android:layout_width="170dp"
+                        android:layout_height="290dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/bg_widget"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mainPanel">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Reminders"
+                            android:textColor="#701010"
+                            android:textSize="17dp" />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/news_icon"
+                            android:rotation="-37.31" />
+                    </FrameLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/navigationBar"
+                    android:layout_width="170dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/montserrat_bold"
-                        android:text="Reminders"
-                        android:textColor="#701010"
-                        android:textSize="17dp" />
-
+                    <!-- PROFILE -->
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/news_icon"
-                        android:rotation="-37.31" />
-                </FrameLayout>
+                        android:layout_marginRight="40dp"
+                        android:clickable="true"
+                        android:src="@drawable/profile_icon" />
+
+                    <!-- HOME -->
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="40dp"
+                        android:clickable="true"
+                        android:src="@drawable/home_icon" />
+
+                    <!-- NOTIFICATION -->
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="15dp"
+                        android:clickable="true"
+                        android:src="@drawable/notification_icon" />
+
+                </LinearLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-            android:layout_width="170dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center|bottom"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            >
-
-            <!-- PROFILE -->
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="40dp"
-                android:clickable="true"
-                android:src="@drawable/profile_icon"/>
-
-            <!-- HOME -->
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="40dp"
-                android:clickable="true"
-                android:src="@drawable/home_icon"/>
-
-            <!-- NOTIFICATION -->
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="15dp"
-                android:clickable="true"
-                android:src="@drawable/notification_icon"/>
-
-        </LinearLayout>
-
-    </FrameLayout>
+        </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,125 +25,128 @@
         </ImageView>
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/lblPersonalInfo"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/personalGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"
-        android:text="Personal Info"
-        android:textColor="#FFFFFF"
-        android:textSize="32dp"
-        android:fontFamily="@font/montserrat_black"
+        android:layout_marginBottom="30dp"
         app:layout_constraintTop_toBottomOf="@id/topImage"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@id/btnNext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/lblStepNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:text="step 1 of 5"
-        android:textColor="#FFFFFF"
-        android:textSize="15dp"
-        android:fontFamily="@font/raleway_italic"
-        app:layout_constraintTop_toBottomOf="@id/lblPersonalInfo"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        <TextView
+            android:id="@+id/lblPersonalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_black"
+            android:text="Personal Info"
+            android:textColor="#FFFFFF"
+            android:textSize="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
-        android:id="@+id/txtLastName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/dsos_txtfield"
-        app:layout_constraintTop_toBottomOf="@id/lblStepNumber"
-        app:layout_constraintBottom_toTopOf="@id/txtFirstName"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        <TextView
+            android:id="@+id/lblStepNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_italic"
+            android:text="step 1 of 5"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblPersonalInfo" />
 
-        <EditText
-            android:layout_width="235dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start|center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="4dp"
-            android:hint="Last Name"
-            android:textColorHint="#CCCCCC"
-            android:scrollHorizontally="true"
-            android:background="@android:color/transparent"/>
+        <FrameLayout
+            android:id="@+id/txtLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/dsos_txtfield"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblStepNumber">
 
-    </FrameLayout>
+            <EditText
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent"
+                android:hint="Last Name"
+                android:scrollHorizontally="true"
+                android:textColorHint="#CCCCCC" />
 
-    <FrameLayout
-        android:id="@+id/txtFirstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/dsos_txtfield"
-        app:layout_constraintTop_toBottomOf="@id/txtLastName"
-        app:layout_constraintBottom_toTopOf="@id/txtMiddleName"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        </FrameLayout>
 
-        <EditText
-            android:layout_width="235dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start|center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="4dp"
-            android:hint="First Name"
-            android:textColorHint="#CCCCCC"
-            android:scrollHorizontally="true"
-            android:background="@android:color/transparent"/>
+        <FrameLayout
+            android:id="@+id/txtFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/dsos_txtfield"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtLastName">
 
-    </FrameLayout>
+            <EditText
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent"
+                android:hint="First Name"
+                android:scrollHorizontally="true"
+                android:textColorHint="#CCCCCC" />
 
-    <FrameLayout
-        android:id="@+id/txtMiddleName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/dsos_txtfield"
-        app:layout_constraintTop_toBottomOf="@id/txtFirstName"
-        app:layout_constraintBottom_toTopOf="@id/txtBirthDate"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        </FrameLayout>
 
-        <EditText
-            android:layout_width="235dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start|center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="4dp"
-            android:hint="Middle Name"
-            android:textColorHint="#CCCCCC"
-            android:scrollHorizontally="true"
-            android:background="@android:color/transparent"/>
+        <FrameLayout
+            android:id="@+id/txtMiddleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/dsos_txtfield"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtFirstName">
 
-    </FrameLayout>
+            <EditText
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent"
+                android:hint="Middle Name"
+                android:scrollHorizontally="true"
+                android:textColorHint="#CCCCCC" />
 
-    <FrameLayout
-        android:id="@+id/txtBirthDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/dsos_txtfield"
-        app:layout_constraintTop_toBottomOf="@id/txtMiddleName"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        </FrameLayout>
 
-        <EditText
-            android:layout_width="235dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start|center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="4dp"
-            android:hint="Birth Date (calendar selectable)"
-            android:textColorHint="#CCCCCC"
-            android:scrollHorizontally="true"
-            android:background="@android:color/transparent"/>
+        <FrameLayout
+            android:id="@+id/txtBirthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/dsos_txtfield"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtMiddleName">
 
-    </FrameLayout>
+            <EditText
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent"
+                android:hint="Birth Date (calendar selectable)"
+                android:scrollHorizontally="true"
+                android:textColorHint="#CCCCCC" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/btnNext"
