@@ -26,11 +26,6 @@ public class EnrollAccount extends AppCompatActivity {
             birthDate = intent.getStringExtra("birth_date");
         }
 
-        Log.d("Last Name: ", lastName);
-        Log.d("FirstName: ", firstName);
-//        Log.d("Email: ", email);
-//        Log.d("Password: ", password);
-
         //EVENTS
         btnNext.setOnClickListener(e -> goToEnrollProgram(e));
     }

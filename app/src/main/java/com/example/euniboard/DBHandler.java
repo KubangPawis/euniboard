@@ -63,6 +63,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         createStudentInfoTable(db);
+<<<<<<< HEAD
         createBlockSection(db);
         createFaculty(db);
         createSubject(db);
@@ -95,6 +96,8 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_SHS_SCHOOL + " TEXT, "
                 + COLUMN_SHS_GRADE + " DOUBLE)";
         db.execSQL(query);
+=======
+>>>>>>> 77beac9 (wutdahel omahgad nowayay~)
     }
     public void createBlockSection(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TB_BLOCK_SECTION
@@ -132,6 +135,76 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
+
+    public void createStudentInfoTable(SQLiteDatabase db) {
+        String query = "CREATE TABLE " + TABLE_NAME +
+                " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_LAST_NAME + " TEXT, " +
+                COLUMN_FIRST_NAME + " TEXT, " +
+                COLUMN_MIDDLE_NAME + " TEXT, " +
+                COLUMN_BIRTH_DATE + " TEXT, " +
+                COLUMN_EMAIL + " TEXT UNIQUE, " +
+                COLUMN_PASSWORD + " TEXT, " +
+                COLUMN_YEAR_LEVEL + " INTEGER, " +
+                COLUMN_PROGRAM + " TEXT, " +
+                COLUMN_SPECIALIZATION + " TEXT, " +
+                COLUMN_AGE + " INTEGER, " +
+                COLUMN_SEX + " TEXT, " +
+                COLUMN_RELIGION + " TEXT, " +
+                COLUMN_CITIZENSHIP + " TEXT, " +
+                COLUMN_FULL_ADDRESS + " TEXT, " +
+                COLUMN_ZIP_CODE + " TEXT, " +
+                COLUMN_MOBILE_NUMBER + " TEXT, " +
+                COLUMN_ELEM_SCHOOL + " TEXT, " +
+                COLUMN_ELEM_GRADE + " DOUBLE, " +
+                COLUMN_JHS_SCHOOL + " TEXT, " +
+                COLUMN_JHS_GRADE + " DOUBLE, " +
+                COLUMN_SHS_SCHOOL + " TEXT, " +
+                COLUMN_SHS_GRADE + " DOUBLE" +
+                ")";
+        db.execSQL(query);
+    }
+    private void createSubjectBlockTable(SQLiteDatabase db) {
+        String createTableSQL = "CREATE TABLE SubjectBlock (" +
+                "BlockID INTEGER PRIMARY KEY," +
+                "BlockName TEXT" +
+                ")";
+        db.execSQL(createTableSQL);
+    }
+    private void createSubjectEnrollmentTable(SQLiteDatabase db) {
+        String createTableSQL = "CREATE TABLE SubjectEnrollment (" +
+                "EnrollmentID INTEGER PRIMARY KEY," +
+                "Email TEXT," +
+                "BlockID INTEGER," +
+                "SubjectName TEXT," +
+                "FOREIGN KEY (Email) REFERENCES StudentInfo(Email)," +
+                "FOREIGN KEY (BlockID) REFERENCES SubjectBlock(BlockID)" +
+                ")";
+        db.execSQL(createTableSQL);
+    }
+    private void createScheduleTable(SQLiteDatabase db) {
+        String createTableSQL = "CREATE TABLE Schedule (" +
+                "ScheduleID INTEGER PRIMARY KEY," +
+                "BlockID INTEGER," +
+                "SubjectName TEXT," +
+                "DayOfWeek TEXT," +
+                "StartTime TEXT," +
+                "EndTime TEXT," +
+                // Other schedule details
+                "FOREIGN KEY (BlockID) REFERENCES SubjectBlock(BlockID)" +
+                ")";
+        db.execSQL(createTableSQL);
+    }
+
+    private void createProfessorTable(SQLiteDatabase db) {
+        String createTableSQL = "CREATE TABLE Professor (" +
+                "ProfessorID INTEGER PRIMARY KEY," +
+                "ProfessorName TEXT" +
+                ")";
+        db.execSQL(createTableSQL);
+    }
+
+
 
     public void exportDatabase(@Nullable Context context) {
         try {

@@ -93,10 +93,6 @@ public class EnrollProgram extends AppCompatActivity {
         }
     }
     public void goToEnrollAdd(View v) {
-        Log.d("ERROR CHECK", "Year Level: " + yearLevel);
-        Log.d("ERROR CHECK", "Program: " + program);
-        Log.d("ERROR CHECK", "Specialization: " + specialization);
-
         Intent intent = new Intent(this, EnrollAdditional.class);
         intent.putExtra("last_name", lastName);
         intent.putExtra("first_name", firstName);
