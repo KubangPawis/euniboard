@@ -92,7 +92,6 @@
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/txtAge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -100,6 +99,7 @@
                 android:background="@drawable/dsos_txtfield">
 
                 <EditText
+                    android:id="@+id/txtAge"
                     android:layout_width="235dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="start|center"
@@ -132,7 +132,6 @@
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/txtReligion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -140,6 +139,7 @@
                 android:background="@drawable/dsos_txtfield">
 
                 <EditText
+                    android:id="@+id/txtReligion"
                     android:layout_width="235dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="start|center"
@@ -153,7 +153,6 @@
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/txtCitizenship"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -161,6 +160,7 @@
                 android:background="@drawable/dsos_txtfield">
 
                 <EditText
+                    android:id="@+id/txtCitizenship"
                     android:layout_width="235dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="start|center"
@@ -174,7 +174,6 @@
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/txtFullAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -182,6 +181,7 @@
                 android:background="@drawable/dsos_txtfield">
 
                 <EditText
+                    android:id="@+id/txtFullAddress"
                     android:layout_width="235dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="start|center"
@@ -195,7 +195,6 @@
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/txtZipCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -203,6 +202,7 @@
                 android:background="@drawable/dsos_txtfield">
 
                 <EditText
+                    android:id="@+id/txtZipCode"
                     android:layout_width="235dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="start|center"
@@ -216,7 +216,6 @@
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/txtMobileNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -224,6 +223,7 @@
                 android:background="@drawable/dsos_txtfield">
 
                 <EditText
+                    android:id="@+id/txtMobileNumber"
                     android:layout_width="235dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="start|center"

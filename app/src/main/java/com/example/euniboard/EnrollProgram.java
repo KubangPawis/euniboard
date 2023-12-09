@@ -6,23 +6,93 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 public class EnrollProgram extends AppCompatActivity {
-
+    private String lastName, firstName, middleName, birthDate, email, password;
+    private int yearLevel;
+    private String program, specialization;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enroll_program);
 
+        setSpinYear();
+        setSpinProgram();
+        setSpinSpecialization();
+
         //EVENTS
         Button btnNext = findViewById(R.id.btnNext);
+        Spinner spinYearLevel = findViewById(R.id.spinYearLvl);
+        Spinner spinProgram = findViewById(R.id.spinProgram);
+        Spinner spinSpecialization = findViewById(R.id.spinSpecialization);
+
+        spinYearLevel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                yearLevel = Integer.parseInt(parent.getItemAtPosition(position).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        spinProgram.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                program = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        spinSpecialization.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                specialization = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         btnNext.setOnClickListener(e -> goToEnrollAdd(e));
 
-        //YEAR LEVEL
+        Intent intent = getIntent();
+        if (intent != null) {
+            lastName = intent.getStringExtra("last_name");
+            firstName = intent.getStringExtra("first_name");
+            middleName = intent.getStringExtra("middle_name");
+            birthDate = intent.getStringExtra("birth_date");
+            email = intent.getStringExtra("email");
+            password = intent.getStringExtra("password");
+        }
+
+    }
+    public void goToEnrollAdd(View v) {
+        Intent intent = new Intent(this, EnrollAdditional.class);
+        intent.putExtra("last_name", lastName);
+        intent.putExtra("first_name", firstName);
+        intent.putExtra("middle_name", middleName);
+        intent.putExtra("birth_date", birthDate);
+        intent.putExtra("email", email);
+        intent.putExtra("password", password);
+        intent.putExtra("year_level", yearLevel);
+        intent.putExtra("program", program);
+        intent.putExtra("specialization", specialization);
+
+        startActivity(intent);
+    }
+    public void setSpinYear() {
         Spinner spinYear = findViewById(R.id.spinYearLvl);
         ArrayAdapter<CharSequence> yearAdapter = ArrayAdapter.createFromResource(
                 this,
@@ -32,8 +102,8 @@ public class EnrollProgram extends AppCompatActivity {
         yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinYear.setBackground(ContextCompat.getDrawable(this, R.drawable.spinner_arrow));
         spinYear.setAdapter(yearAdapter);
-
-        //PROGRAM
+    }
+    public void setSpinProgram() {
         Spinner spinProgram = findViewById(R.id.spinProgram);
         ArrayAdapter<CharSequence> programAdapter = ArrayAdapter.createFromResource(
                 this,
@@ -43,8 +113,8 @@ public class EnrollProgram extends AppCompatActivity {
         programAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinProgram.setBackground(ContextCompat.getDrawable(this, R.drawable.spinner_arrow));
         spinProgram.setAdapter(programAdapter);
-
-        //SPECIALIZATION
+    }
+    public void setSpinSpecialization() {
         Spinner spinSpecialization = findViewById(R.id.spinSpecialization);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
@@ -54,10 +124,5 @@ public class EnrollProgram extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinSpecialization.setBackground(ContextCompat.getDrawable(this, R.drawable.spinner_arrow));
         spinSpecialization.setAdapter(adapter);
-    }
-
-    public void goToEnrollAdd(View v) {
-        Intent intent = new Intent(this, EnrollAdditional.class);
-        startActivity(intent);
     }
 }
