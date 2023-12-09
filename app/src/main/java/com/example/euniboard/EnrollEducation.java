@@ -35,17 +35,16 @@ public class EnrollEducation extends AppCompatActivity {
             birthDate = intent.getStringExtra("birth_date");
             email = intent.getStringExtra("email");
             password = intent.getStringExtra("password");
-            yearLevel = Integer.parseInt(Objects.requireNonNull(intent.getStringExtra("year_level")));
+            yearLevel = intent.getIntExtra("year_level", 0);
             program = intent.getStringExtra("program");
             specialization = intent.getStringExtra("specialization");
-            age = Integer.parseInt(Objects.requireNonNull(intent.getStringExtra("age")));
+            age = intent.getIntExtra("age", 0);
             sex = intent.getStringExtra("sex");
             religion = intent.getStringExtra("religion");
             citizenship = intent.getStringExtra("citizenship");
             fullAddress = intent.getStringExtra("full_address");
             zipCode = intent.getStringExtra("zip_code");
             mobileNumber = intent.getStringExtra("mobile_number");
-
         }
     }
     public void goToCongratulations(View v) {

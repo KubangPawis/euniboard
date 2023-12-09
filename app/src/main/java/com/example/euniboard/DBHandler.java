@@ -34,6 +34,12 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     private static final String COLUMN_FULL_ADDRESS = "full_address";
     private static final String COLUMN_ZIP_CODE = "zip_code";
     private static final String COLUMN_MOBILE_NUMBER = "mobile_number";
+    private static final String COLUMN_ELEM_SCHOOL = "elem_school";
+    private static final String COLUMN_ELEM_GRADE = "elem_grade";
+    private static final String COLUMN_JHS_SCHOOL = "jhs_school";
+    private static final String COLUMN_JHS_GRADE = "jhs_grade";
+    private static final String COLUMN_SHS_SCHOOL = "shs_school";
+    private static final String COLUMN_SHS_GRADE = "shs_grade";
 
     protected DBHandler(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -58,13 +64,17 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_CITIZENSHIP + " TEXT, "
                 + COLUMN_FULL_ADDRESS + " TEXT, "
                 + COLUMN_ZIP_CODE + " TEXT, "
-                + COLUMN_MOBILE_NUMBER + " TEXT)";
+                + COLUMN_MOBILE_NUMBER + " TEXT, "
+                + COLUMN_ELEM_SCHOOL + " TEXT, "
+                + COLUMN_ELEM_GRADE + " DOUBLE, "
+                + COLUMN_JHS_SCHOOL + " TEXT, "
+                + COLUMN_JHS_GRADE + " DOUBLE, "
+                + COLUMN_SHS_SCHOOL + " TEXT, "
+                + COLUMN_SHS_GRADE + " DOUBLE)";
         db.execSQL(query);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-//        onCreate(db);
     }
 
     public void exportDatabase(@Nullable Context context) {

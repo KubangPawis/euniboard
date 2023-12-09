@@ -2,6 +2,7 @@ package com.example.euniboard;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +25,11 @@ public class EnrollAccount extends AppCompatActivity {
             middleName = intent.getStringExtra("middle_name");
             birthDate = intent.getStringExtra("birth_date");
         }
+
+        Log.d("Last Name: ", lastName);
+        Log.d("FirstName: ", firstName);
+//        Log.d("Email: ", email);
+//        Log.d("Password: ", password);
 
         //EVENTS
         btnNext.setOnClickListener(e -> goToEnrollProgram(e));

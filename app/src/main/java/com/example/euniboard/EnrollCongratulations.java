@@ -2,6 +2,7 @@ package com.example.euniboard;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -31,10 +32,10 @@ public class EnrollCongratulations extends AppCompatActivity {
             birthDate = intent.getStringExtra("birth_date");
             email = intent.getStringExtra("email");
             password = intent.getStringExtra("password");
-            yearLevel = Integer.parseInt(Objects.requireNonNull(intent.getStringExtra("year_level")));
+            yearLevel = intent.getIntExtra("year_level", 0);
             program = intent.getStringExtra("program");
             specialization = intent.getStringExtra("specialization");
-            age = Integer.parseInt(Objects.requireNonNull(intent.getStringExtra("age")));
+            age = intent.getIntExtra("age", 0);
             sex = intent.getStringExtra("sex");
             religion = intent.getStringExtra("religion");
             citizenship = intent.getStringExtra("citizenship");
@@ -42,15 +43,21 @@ public class EnrollCongratulations extends AppCompatActivity {
             zipCode = intent.getStringExtra("zip_code");
             mobileNumber = intent.getStringExtra("mobile_number");
             elemSchool = intent.getStringExtra("elem_school");
-            elemGrade = Double.parseDouble(Objects.requireNonNull(intent.getStringExtra("elem_grade")));
+            elemGrade = intent.getDoubleExtra("elem_grade", 0);
             jhSchool = intent.getStringExtra("jhs_school");
-            juniorGrade = Double.parseDouble(Objects.requireNonNull(intent.getStringExtra("jhs_grade")));
+            juniorGrade = intent.getDoubleExtra("jhs_grade", 0);
             shSchool = intent.getStringExtra("shs_school");
-            seniorGrade = Double.parseDouble(Objects.requireNonNull(intent.getStringExtra("shs_grade")));
+            seniorGrade = intent.getDoubleExtra("shs_grade", 0);
         }
     }
 
     public void goHome(View v) {
+        Log.d("ERROR CHECK", specialization);
+        Log.d("ERROR CHECK", String.valueOf(yearLevel));
+        Log.d("ERROR CHECK", String.valueOf(elemGrade));
+        Log.d("ERROR CHECK", String.valueOf(juniorGrade));
+        Log.d("ERROR CHECK", String.valueOf(seniorGrade));
+
         Student studentHelper = new Student(this,lastName, firstName, middleName, birthDate, email, password, yearLevel, program, specialization, age, sex, religion, citizenship, fullAddress, zipCode, mobileNumber, elemSchool, elemGrade, jhSchool, juniorGrade, shSchool, seniorGrade);
 
         //IMPORTANT: This clears all of the previous activities from the stack so that you can't go back to the enrollment pages

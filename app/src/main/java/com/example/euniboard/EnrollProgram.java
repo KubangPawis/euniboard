@@ -2,6 +2,7 @@ package com.example.euniboard;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -34,7 +35,21 @@ public class EnrollProgram extends AppCompatActivity {
         spinYearLevel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                yearLevel = Integer.parseInt(parent.getItemAtPosition(position).toString());
+                String yearTemp = parent.getItemAtPosition(position).toString();
+                switch(yearTemp) {
+                    case "1st Year":
+                        yearLevel = 1;
+                        break;
+                    case "2nd Year":
+                        yearLevel = 2;
+                        break;
+                    case "3rd Year":
+                        yearLevel = 3;
+                        break;
+                    case "4th Year":
+                        yearLevel = 4;
+                        break;
+                }
             }
 
             @Override
@@ -76,9 +91,12 @@ public class EnrollProgram extends AppCompatActivity {
             email = intent.getStringExtra("email");
             password = intent.getStringExtra("password");
         }
-
     }
     public void goToEnrollAdd(View v) {
+        Log.d("ERROR CHECK", "Year Level: " + yearLevel);
+        Log.d("ERROR CHECK", "Program: " + program);
+        Log.d("ERROR CHECK", "Specialization: " + specialization);
+
         Intent intent = new Intent(this, EnrollAdditional.class);
         intent.putExtra("last_name", lastName);
         intent.putExtra("first_name", firstName);

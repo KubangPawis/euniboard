@@ -33,12 +33,12 @@ public class Student extends DBHandler {
         studentInfo.put("full_address", fullAddress);
         studentInfo.put("zip_code", zipCode);
         studentInfo.put("mobile_number", mobileNumber);
-        studentInfo.put("elementary_school", elemSchool);
-        studentInfo.put("elem_gwa", elemGWA);
-        studentInfo.put("jh_school", jhSchool);
-        studentInfo.put("jhs_gwa", jhsGWA);
-        studentInfo.put("sh_school", shSchool);
-        studentInfo.put("shs_gwa", shsGWA);
+        studentInfo.put("elem_school", elemSchool);
+        studentInfo.put("elem_grade", elemGWA);
+        studentInfo.put("jhs_school", jhSchool);
+        studentInfo.put("jhs_grade", jhsGWA);
+        studentInfo.put("shs_school", shSchool);
+        studentInfo.put("shs_grade", shsGWA);
 
         SQLiteDatabase db = this.getWritableDatabase();
         long newStudentId = db.insert("StudentInfo", null, studentInfo);

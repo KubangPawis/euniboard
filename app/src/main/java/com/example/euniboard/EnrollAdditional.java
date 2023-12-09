@@ -2,6 +2,7 @@ package com.example.euniboard;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -51,7 +52,7 @@ public class EnrollAdditional extends AppCompatActivity {
             birthDate = intent.getStringExtra("birth_date");
             email = intent.getStringExtra("email");
             password = intent.getStringExtra("password");
-            yearLevel = Integer.parseInt(Objects.requireNonNull(intent.getStringExtra("year_level")));
+            yearLevel = intent.getIntExtra("year_level", 0);
             program = intent.getStringExtra("program");
             specialization = intent.getStringExtra("specialization");
         }
@@ -71,6 +72,8 @@ public class EnrollAdditional extends AppCompatActivity {
         fullAddress = String.valueOf(txtFullAddress.getText());
         zipCode = String.valueOf(txtZipCode.getText());
         mobileNumber = String.valueOf(txtMobileNumber.getText());
+
+        Log.d("ERROR CHECK", "Sex: " + sex);
 
         Intent intent = new Intent(this, EnrollEducation.class);
         intent.putExtra("last_name", lastName);

@@ -68,12 +68,12 @@
         app:layout_constraintTop_toBottomOf="@id/accountLblGroup">
 
         <FrameLayout
-            android:id="@+id/txtEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/dsos_txtfield">
 
             <EditText
+                android:id="@+id/txtEmail"
                 android:layout_width="235dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="start|center"
@@ -86,13 +86,13 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/txtRetypeEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/dsos_txtfield">
 
             <EditText
+                android:id="@+id/txtRetypeEmail"
                 android:layout_width="235dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="start|center"
@@ -105,13 +105,13 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/txtPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/dsos_txtfield">
 
             <EditText
+                android:id="@+id/txtPassword"
                 android:layout_width="235dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="start|center"
@@ -126,13 +126,13 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/txtRetypePassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/dsos_txtfield">
 
             <EditText
+                android:id="@+id/txtRetypePassword"
                 android:layout_width="235dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="start|center"
