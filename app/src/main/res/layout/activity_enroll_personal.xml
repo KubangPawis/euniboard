@@ -83,6 +83,8 @@
                 android:layout_marginBottom="4dp"
                 android:background="@android:color/transparent"
                 android:hint="Last Name"
+                android:fontFamily="@font/raleway"
+                android:textColor="@color/black"
                 android:scrollHorizontally="true"
                 android:textColorHint="#CCCCCC" />
 
@@ -103,6 +105,8 @@
                 android:layout_marginBottom="4dp"
                 android:background="@android:color/transparent"
                 android:hint="First Name"
+                android:fontFamily="@font/raleway"
+                android:textColor="@color/black"
                 android:scrollHorizontally="true"
                 android:textColorHint="#CCCCCC" />
 
@@ -123,6 +127,8 @@
                 android:layout_marginBottom="4dp"
                 android:background="@android:color/transparent"
                 android:hint="Middle Name"
+                android:fontFamily="@font/raleway"
+                android:textColor="@color/black"
                 android:scrollHorizontally="true"
                 android:textColorHint="#CCCCCC" />
 
@@ -143,6 +149,8 @@
                 android:layout_marginBottom="4dp"
                 android:background="@android:color/transparent"
                 android:hint="Birth Date (calendar selectable)"
+                android:fontFamily="@font/raleway"
+                android:textColor="@color/black"
                 android:scrollHorizontally="true"
                 android:textColorHint="#CCCCCC" />
 

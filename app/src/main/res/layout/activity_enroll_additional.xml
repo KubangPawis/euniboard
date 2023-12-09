@@ -107,6 +107,8 @@
                     android:layout_marginBottom="4dp"
                     android:background="@android:color/transparent"
                     android:hint="Age"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/black"
                     android:scrollHorizontally="true"
                     android:textColorHint="#CCCCCC" />
 
@@ -147,6 +149,8 @@
                     android:layout_marginBottom="4dp"
                     android:background="@android:color/transparent"
                     android:hint="Religion"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/black"
                     android:scrollHorizontally="true"
                     android:textColorHint="#CCCCCC" />
 
@@ -168,6 +172,8 @@
                     android:layout_marginBottom="4dp"
                     android:background="@android:color/transparent"
                     android:hint="Citizenship"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/black"
                     android:scrollHorizontally="true"
                     android:textColorHint="#CCCCCC" />
 
@@ -189,6 +195,8 @@
                     android:layout_marginBottom="4dp"
                     android:background="@android:color/transparent"
                     android:hint="Full Address"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/black"
                     android:scrollHorizontally="true"
                     android:textColorHint="#CCCCCC" />
 
@@ -210,6 +218,8 @@
                     android:layout_marginBottom="4dp"
                     android:background="@android:color/transparent"
                     android:hint="Zip Code"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/black"
                     android:scrollHorizontally="true"
                     android:textColorHint="#CCCCCC" />
 
@@ -231,6 +241,8 @@
                     android:layout_marginBottom="4dp"
                     android:background="@android:color/transparent"
                     android:hint="Mobile Number"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/black"
                     android:scrollHorizontally="true"
                     android:textColorHint="#CCCCCC" />
 
