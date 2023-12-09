@@ -16,8 +16,12 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     private Context context;
     private static final String DATABASE_NAME = "EnvergaInfo.db";
     private static final int DATABASE_VERSION = 1;
-    private static final String TABLE_NAME = "StudentInfo";
-    private static final String COLUMN_ID = "user_id";
+    private static final String TB_STUDENT_INFO = "StudentInfo";
+    private static final String TB_BLOCK_SECTION = "BlockSection";
+    private static final String TB_FACULTY = "Faculty";
+    private static final String TB_SUBJECTS = "Subjects";
+    private static final String TB_ENROLLMENTS = "Enrollments";
+    private static final String COLUMN_STUDENT_ID = "student_id";
     private static final String COLUMN_LAST_NAME = "last_name";
     private static final String COLUMN_FIRST_NAME = "first_name";
     private static final String COLUMN_MIDDLE_NAME = "middle_name";
@@ -40,6 +44,17 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     private static final String COLUMN_JHS_GRADE = "jhs_grade";
     private static final String COLUMN_SHS_SCHOOL = "shs_school";
     private static final String COLUMN_SHS_GRADE = "shs_grade";
+    private static final String COLUMN_BLOCK_CODE = "block_code";
+    private static final String COLUMN_BLOCK_NAME = "block_name";
+    private static final String COLUMN_FACULTY_ID = "faculty_id";
+    private static final String COLUMN_FACULTY_FIRSTNAME = "faculty_firstName";
+    private static final String COLUMN_FACULTY_LASTNAME = "faculty_lastName";
+    private static final String COLUMN_SUBJECT_ID = "subject_id";
+    private static final String COLUMN_SUBJECT_NAME = "subject_name";
+    private static final String COLUMN_SUBJECT_SCHEDULE = "subject_schedule";
+    private static final String COLUMN_SECTION_CODE = "section_code";
+    private static final String COLUMN_ENROLLMENT_ID = "enrollment_id";
+
 
     protected DBHandler(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -47,8 +62,16 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query = "CREATE TABLE " + TABLE_NAME
-                + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+        createStudentInfoTable(db);
+        createBlockSection(db);
+        createFaculty(db);
+        createSubject(db);
+        createEnrollments(db);
+    }
+
+    public void createStudentInfoTable(SQLiteDatabase db) {
+        String query = "CREATE TABLE " + TB_STUDENT_INFO
+                + " (" + COLUMN_STUDENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_LAST_NAME + " TEXT, "
                 + COLUMN_FIRST_NAME + " TEXT, "
                 + COLUMN_MIDDLE_NAME + " TEXT, "
@@ -72,6 +95,39 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_SHS_SCHOOL + " TEXT, "
                 + COLUMN_SHS_GRADE + " DOUBLE)";
         db.execSQL(query);
+    }
+    public void createBlockSection(SQLiteDatabase db) {
+        String query = "CREATE TABLE " + TB_BLOCK_SECTION
+                + " (" + COLUMN_BLOCK_CODE + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUMN_BLOCK_NAME + " TEXT, "
+                + COLUMN_YEAR_LEVEL + " INTEGER)";
+    }
+    public void createFaculty(SQLiteDatabase db) {
+        String query = "CREATE TABLE " + TB_FACULTY
+                + " (" + COLUMN_FACULTY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUMN_FACULTY_FIRSTNAME + " TEXT, "
+                + COLUMN_FACULTY_LASTNAME + " TEXT)";
+    }
+    public void createSubject(SQLiteDatabase db) {
+        String query = "CREATE TABLE " + TB_SUBJECTS
+                + " (" + COLUMN_SUBJECT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUMN_SUBJECT_NAME + " TEXT, "
+                + COLUMN_BLOCK_CODE + " INTEGER, "
+                + COLUMN_SUBJECT_SCHEDULE + " TEXT, "
+                + COLUMN_FACULTY_ID + "INTEGER, "
+                + COLUMN_SECTION_CODE + " TEXT, "
+                + "FOREIGN KEY (block_code) REFERENCES BlockSection(block_code),"
+                + "FOREIGN KEY (faculty_id) REFERENCES Faculty(faculty_id)"
+                + ") ";
+    }
+    public void createEnrollments(SQLiteDatabase db) {
+        String query = "CREATE TABLE " + TB_ENROLLMENTS
+                + " (" + COLUMN_ENROLLMENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUMN_STUDENT_ID + " INTEGER, "
+                + COLUMN_BLOCK_CODE + " INTEGER, "
+                + "FOREIGN KEY (student_id) REFERENCES StudentInfo(student_id),"
+                + "FOREIGN KEY (block_code) REFERENCES BlockSection(block_code)"
+                + " )";
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
