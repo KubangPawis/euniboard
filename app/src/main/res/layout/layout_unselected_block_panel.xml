@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="105dp"
+    android:layout_height="26dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/blckFolder"
+            android:layout_width="18dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/block_folder_maroon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblBlockName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="1dp"
+            android:text="BSCS - "
+            android:textColor="#6C2929"
+            android:textSize="9.5sp"
+            android:fontFamily="@font/raleway_extrabold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/blckFolder"/>
+        <TextView
+            android:id="@+id/lblBlockNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="1dp"
+            android:text="Number"
+            android:textColor="#6C2929"
+            android:textSize="9.5sp"
+            android:fontFamily="@font/raleway_extrabold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/lblBlockName"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
