@@ -171,7 +171,6 @@ public abstract class DBHandler extends SQLiteOpenHelper {
         }
     }
     public void inputSubjectValues(SQLiteDatabase db, String inputSubjCode, String inputSubjName, int inputBlockCode, String inputSubjSched, int facultyId, String inputSectionCode) {
-        for (String subject : subjectNames) {
             String query = "INSERT INTO " + TB_SUBJECTS
                     + " (" + COLUMN_SUBJECT_CODE + ", " + COLUMN_SUBJECT_NAME + ", "
                     + COLUMN_BLOCK_CODE + ", " + COLUMN_SUBJECT_SCHEDULE + ", "
@@ -180,7 +179,6 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                     + inputBlockCode + ", " + inputSubjSched + ", "
                     + facultyId + ", " + inputSectionCode + ");";
             db.execSQL(query);
-        }
     }
     public void inputEnrollmentValues(SQLiteDatabase db, int inputStudentId, int inputBlockCode) {
         String query = "INSERT INTO " + TB_ENROLLMENTS

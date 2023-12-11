@@ -17,6 +17,9 @@ public class Student extends DBHandler {
 
     public Student(@Nullable Context context) {
         super(context);
+    }
+
+    protected void addSubject() {
 
     }
 

@@ -65,6 +65,7 @@
 
         <!-- PROFILE -->
         <ImageView
+            android:id="@+id/btnProfile"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginRight="40dp"
@@ -73,6 +74,7 @@
 
         <!-- HOME -->
         <ImageView
+            android:id="@+id/btnHome"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginRight="40dp"
@@ -81,6 +83,7 @@
 
         <!-- NOTIFICATION -->
         <ImageView
+            android:id="@+id/btnNotif"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginRight="15dp"

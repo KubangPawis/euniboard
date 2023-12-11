@@ -23,6 +23,10 @@ public class ViewSubjects extends AppCompatActivity {
         else {
             openSubjectsNotAvailable();
         }
+
+        //EVENTS
+        ImageView btnAdd = findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(e -> goToRegisterSubjects());
     }
 
     public void openSubjectsAvailable() {
@@ -31,11 +35,14 @@ public class ViewSubjects extends AppCompatActivity {
                 .replace(R.id.fragmentContainer, frag)
                 .commit();
     }
-
     public void openSubjectsNotAvailable() {
         SubjectsNA_Fragment frag = new SubjectsNA_Fragment();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragmentContainer, frag)
                 .commit();
+    }
+    public void goToRegisterSubjects() {
+        Intent intent = new Intent(this, RegisterSubject.class);
+        startActivity(intent);
     }
 }
