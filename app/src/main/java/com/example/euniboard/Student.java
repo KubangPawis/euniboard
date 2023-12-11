@@ -15,6 +15,11 @@ public class Student extends DBHandler {
         addStudent(lastName, firstName, middleName, birthDate, email, password, yearLevel, program, specialization, age, sex, religion, citizenship, fullAddress, zipCode, mobileNumber, elemSchool, elemGWA, jhSchool, jhsGWA, shSchool, shsGWA);
     }
 
+    public Student(@Nullable Context context) {
+        super(context);
+
+    }
+
     protected void addStudent(String lastName, String firstName, String middleName, String birthDate, String email, String password, int yearLevel, String program, String specialization, int age, String sex, String religion, String citizenship, String fullAddress, String zipCode, String mobileNumber, String elemSchool, double elemGWA, String jhSchool, double jhsGWA, String shSchool, double shsGWA) {
         ContentValues studentInfo = new ContentValues();
         studentInfo.put("last_name", lastName);

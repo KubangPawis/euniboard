@@ -24,7 +24,7 @@ public class SubjectsAvailableFragment extends Fragment {
 
         //BLUR BG METHOD
         View rootView = inflater.inflate(R.layout.fragment_subjects_available, container, false);
-        LinearLayout linearSubjects = rootView.findViewById(R.id.linearFaculty);
+        LinearLayout linearSubjects = rootView.findViewById(R.id.linearSubjects);
 
         String[] subjectList = {"OOP", "Art Appreciation", "Swimming"};
 
@@ -40,7 +40,7 @@ public class SubjectsAvailableFragment extends Fragment {
                 heightPX// Height
         );
 
-        for (String subject : subjectList) { // Assuming 'dataList' contains your items
+        for (String subject : subjectList) {
             View itemView = getLayoutInflater().inflate(R.layout.layout_subject_panel, null);
             TextView titleTextView = itemView.findViewById(R.id.lblSubject);
 
