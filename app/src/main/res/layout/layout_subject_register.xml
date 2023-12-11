@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="145dp"
+    android:layout_height="30dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/arrow_icon"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/arrow_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblSubjectCodePlaceholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/raleway_medium"
+            android:text="Subject Code"
+            android:textColor="#222222"
+            android:textSize="8dp"
+            app:layout_constraintStart_toEndOf="@id/arrow_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblHyphen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/raleway_medium"
+            android:text="-"
+            android:textColor="#222222"
+            android:textSize="8dp"
+            app:layout_constraintStart_toEndOf="@id/lblSubjectCodePlaceholder"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/lblSubjectNamePlaceholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/raleway_medium"
+            android:text="Subject Name"
+            android:textColor="#222222"
+            android:textSize="8dp"
+            app:layout_constraintStart_toEndOf="@id/lblHyphen"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblSubjectSectionPlaceholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SECTION"
+            android:textColor="#222222"
+            android:textSize="5dp"
+            android:fontFamily="@font/raleway_medium"
+            app:layout_constraintStart_toStartOf="@id/lblSubjectCodePlaceholder"
+            app:layout_constraintTop_toBottomOf="@id/lblSubjectCodePlaceholder" />
+
+        <TextView
+            android:id="@+id/lblHyphen2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/raleway_medium"
+            android:text="-"
+            android:textColor="#222222"
+            android:textSize="5dp"
+            app:layout_constraintStart_toEndOf="@id/lblSubjectSectionPlaceholder"
+            app:layout_constraintTop_toBottomOf="@id/lblSubjectCodePlaceholder"/>
+
+        <TextView
+            android:id="@+id/lblSubjectSchedulePlaceholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:text="SCHEDULE"
+            android:textColor="#222222"
+            android:textSize="5dp"
+            android:fontFamily="@font/raleway_medium"
+            app:layout_constraintStart_toEndOf="@id/lblHyphen2"
+            app:layout_constraintTop_toBottomOf="@id/lblSubjectCodePlaceholder" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
