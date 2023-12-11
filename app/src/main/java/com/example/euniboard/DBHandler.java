@@ -104,12 +104,14 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + " (" + COLUMN_BLOCK_CODE + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_BLOCK_NAME + " TEXT, "
                 + COLUMN_YEAR_LEVEL + " INTEGER)";
+        db.execSQL(query);
     }
     public void createFaculty(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TB_FACULTY
                 + " (" + COLUMN_FACULTY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_FACULTY_FIRSTNAME + " TEXT, "
                 + COLUMN_FACULTY_LASTNAME + " TEXT)";
+        db.execSQL(query);
     }
     public void createSubject(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TB_SUBJECTS
@@ -122,6 +124,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + "FOREIGN KEY (block_code) REFERENCES BlockSection(block_code),"
                 + "FOREIGN KEY (faculty_id) REFERENCES Faculty(faculty_id)"
                 + ") ";
+        db.execSQL(query);
     }
     public void createEnrollments(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TB_ENROLLMENTS
@@ -131,6 +134,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + "FOREIGN KEY (student_id) REFERENCES StudentInfo(student_id),"
                 + "FOREIGN KEY (block_code) REFERENCES BlockSection(block_code)"
                 + " )";
+        db.execSQL(query);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
