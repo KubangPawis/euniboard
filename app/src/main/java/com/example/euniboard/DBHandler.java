@@ -136,6 +136,19 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + " )";
         db.execSQL(query);
     }
+
+    public void inputBlockValues(SQLiteDatabase db) {
+        String[] blockNames = {"'Block 1'", "'Block 2'", "'Block 3'", "'Block 4'"};
+        int years = 4;
+        for(int i=0; i<years; i++) {
+            for (int j=0; j< blockNames.length; j++) {
+                String query = "INSERT INTO " + TB_BLOCK_SECTION
+                        + " (" + COLUMN_BLOCK_NAME + ", " + COLUMN_YEAR_LEVEL + ") VALUES"
+                        + " (" + blockNames[j] + ", " + i+1 + "); ";
+                db.execSQL(query);
+            }
+        }
+    }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
