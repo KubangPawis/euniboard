@@ -119,7 +119,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_SUBJECT_NAME + " TEXT, "
                 + COLUMN_BLOCK_CODE + " INTEGER, "
                 + COLUMN_SUBJECT_SCHEDULE + " TEXT, "
-                + COLUMN_FACULTY_ID + "INTEGER, "
+                + COLUMN_FACULTY_ID + " INTEGER, "
                 + COLUMN_SECTION_CODE + " TEXT, "
                 + "FOREIGN KEY (block_code) REFERENCES BlockSection(block_code),"
                 + "FOREIGN KEY (faculty_id) REFERENCES Faculty(faculty_id)"
