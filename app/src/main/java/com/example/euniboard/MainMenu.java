@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,9 +20,28 @@ public class MainMenu extends AppCompatActivity {
         FrameLayout btnSubjects = findViewById(R.id.btnSubjects);
         FrameLayout btnPayment = findViewById(R.id.btnPayment);
         FrameLayout btnOSAS = findViewById(R.id.btnOSAS);
-        btnSubjects.setOnClickListener(e -> openSubjects(e));
-        btnPayment.setOnClickListener(e -> openPayment(e));
-        btnOSAS.setOnClickListener(e -> openOSAS(e));
+        TextView boxSubj = findViewById(R.id.boxSubj);
+        TextView boxPay = findViewById(R.id.boxPay);
+        TextView boxOSAS = findViewById(R.id.boxOSAS);
+        TextView lblSubj = findViewById(R.id.lblSubjects);
+        TextView lblPayment = findViewById(R.id.lblPayment);
+        TextView lblOSAS = findViewById(R.id.lblOSAS);
+        ImageView imgSubj = findViewById(R.id.imgSubj);
+        ImageView imgPay = findViewById(R.id.imgPay);
+        ImageView imgOSAS = findViewById(R.id.imgOSAS);
+
+        btnSubjects.setOnClickListener(this::openSubjects);
+        btnPayment.setOnClickListener(this::openPayment);
+        btnOSAS.setOnClickListener(this::openOSAS);
+        boxSubj.setOnClickListener(this::openSubjects);
+        boxPay.setOnClickListener(this::openPayment);
+        boxOSAS.setOnClickListener(this::openOSAS);
+        lblSubj.setOnClickListener(this::openSubjects);
+        lblPayment.setOnClickListener(this::openPayment);
+        lblOSAS.setOnClickListener(this::openOSAS);
+        imgSubj.setOnClickListener(this::openSubjects);
+        imgPay.setOnClickListener(this::openPayment);
+        imgOSAS.setOnClickListener(this::openOSAS);
     }
 
     public void openSubjects(View v) {

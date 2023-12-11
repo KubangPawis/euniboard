@@ -131,6 +131,7 @@
                         android:layout_marginRight="15dp">
 
                         <TextView
+                            android:id="@+id/boxSubj"
                             android:layout_width="55dp"
                             android:layout_height="55dp"
                             android:layout_gravity="center"
@@ -139,6 +140,7 @@
                             android:clickable="true" />
 
                         <ImageView
+                            android:id="@+id/imgSubj"
                             android:layout_width="35dp"
                             android:layout_height="35dp"
                             android:layout_gravity="center"
@@ -166,6 +168,7 @@
                         android:layout_marginRight="15dp">
 
                         <TextView
+                            android:id="@+id/boxFaculty"
                             android:layout_width="55dp"
                             android:layout_height="55dp"
                             android:layout_gravity="center"
@@ -174,6 +177,7 @@
                             android:clickable="true" />
 
                         <ImageView
+                            android:id="@+id/imgFaculty"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
@@ -202,6 +206,7 @@
                         android:layout_marginRight="15dp">
 
                         <TextView
+                            android:id="@+id/boxPay"
                             android:layout_width="55dp"
                             android:layout_height="55dp"
                             android:layout_gravity="center"
@@ -210,6 +215,7 @@
                             android:clickable="true" />
 
                         <ImageView
+                            android:id="@+id/imgPay"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
@@ -236,6 +242,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
+                            android:id="@+id/boxOSAS"
                             android:layout_width="55dp"
                             android:layout_height="55dp"
                             android:layout_gravity="center"
@@ -244,6 +251,7 @@
                             android:clickable="true" />
 
                         <ImageView
+                            android:id="@+id/imgOSAS"
                             android:layout_width="35dp"
                             android:layout_height="35dp"
                             android:layout_gravity="center"
