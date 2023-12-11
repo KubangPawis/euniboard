@@ -47,13 +47,29 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     private static final String COLUMN_BLOCK_CODE = "block_code";
     private static final String COLUMN_BLOCK_NAME = "block_name";
     private static final String COLUMN_FACULTY_ID = "faculty_id";
-    private static final String COLUMN_FACULTY_FIRSTNAME = "faculty_firstName";
-    private static final String COLUMN_FACULTY_LASTNAME = "faculty_lastName";
+    private static final String COLUMN_FACULTY_NAME = "faculty_name";
     private static final String COLUMN_SUBJECT_ID = "subject_id";
+    private static final String COLUMN_SUBJECT_CODE = "subject_code";
     private static final String COLUMN_SUBJECT_NAME = "subject_name";
     private static final String COLUMN_SUBJECT_SCHEDULE = "subject_schedule";
     private static final String COLUMN_SECTION_CODE = "section_code";
     private static final String COLUMN_ENROLLMENT_ID = "enrollment_id";
+
+    private String[] blockNames = {"Block 1", "Block 2", "Block 3", "Block 4"};
+    private String[] subjectCodes = {"CP100", "CP101", "CSMAT100", "CSPY100", "ENG100", "EU111", "MAMW100", "NROTC1", "NSTP1",
+                                    "PE01", "SOC100", "COM100", "CP102", "CSDS101", "CSMAT101", "EU112", "NROTC2", "NSTP2",
+                                    "PE02", "SOC101", "CP103", "CSDS102", "CSMAT102", "CSNC101", "CSOP01", "HUM100", "PE03", "SOC102"};
+    private String[] subjectNames = {"Introduction to Computing", "Computer Programming 1",
+            "Pre-Calculus for Non STEM", "General Physics for Non STEM", "English Enhancement Course", "The University and I",
+            "Mathematics in the Modern World", "Naval Res Officer Trng Course 1", "National Service Training Program 1",
+            "Physical Activities Toward Health", "Understanding the Self", "Purposive Communication", "Computer Programming 2",
+            "Discrete Structures 1", "College Algebra", "The Family", "Naval Res Officer Trng Course 2", "National Service Training Program 2",
+            "Physical Activities Toward Health", "Readings in Philippine History", "Data Structures and Algorithm", "Discrete Structures 1", "Calculus", "Network and Communication",
+            "Object-Oriented Programming", "Art Appreciation", "Physical Activities Toward Health", "The Contemporary World"};
+    private String[] facultyList = {"Rodrigo Belleza Jr.", "Jose Tan Jr.", "Susan De Castro", "Donna Hernandez", "Cheeky Rose Villamarzo", "Alexander Maralit II",
+            "Joshua Michael Saberon", "Ashiel Bagnes", "Diane Matira", "Josephine Belen", "Victor Oribe", "Marie Grace Jasolin", "Cresencio Jaballa",
+            "Decca Patricia Driz", "Hubert Loresto", "Macaulay Bagnate", "John Kristoffer Tibor", "Joel Rex Villasin", "Frisian Cruz"};
+    private int years = 4;
 
 
     protected DBHandler(@Nullable Context context) {
@@ -109,13 +125,13 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     public void createFaculty(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TB_FACULTY
                 + " (" + COLUMN_FACULTY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + COLUMN_FACULTY_FIRSTNAME + " TEXT, "
-                + COLUMN_FACULTY_LASTNAME + " TEXT)";
+                + COLUMN_FACULTY_NAME + " TEXT)";
         db.execSQL(query);
     }
     public void createSubject(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TB_SUBJECTS
                 + " (" + COLUMN_SUBJECT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUMN_SUBJECT_CODE + " TEXT, "
                 + COLUMN_SUBJECT_NAME + " TEXT, "
                 + COLUMN_BLOCK_CODE + " INTEGER, "
                 + COLUMN_SUBJECT_SCHEDULE + " TEXT, "
@@ -136,10 +152,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + " )";
         db.execSQL(query);
     }
-
     public void inputBlockValues(SQLiteDatabase db) {
-        String[] blockNames = {"Block 1", "Block 2", "Block 3", "Block 4"};
-        int years = 4;
         for(int i=0; i<years; i++) {
             for (String block : blockNames) {
                 String query = "INSERT INTO " + TB_BLOCK_SECTION
@@ -148,6 +161,32 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 db.execSQL(query);
             }
         }
+    }
+    public void inputFacultyValues(SQLiteDatabase db) {
+        for (String faculty : facultyList) {
+            String query = "INSERT INTO " + TB_FACULTY
+                    + " (" + COLUMN_FACULTY_NAME + ") VALUES"
+                    + " ('" + faculty + "');";
+            db.execSQL(query);
+        }
+    }
+    public void inputSubjectValues(SQLiteDatabase db, String inputSubjCode, String inputSubjName, int inputBlockCode, String inputSubjSched, int facultyId, String inputSectionCode) {
+        for (String subject : subjectNames) {
+            String query = "INSERT INTO " + TB_SUBJECTS
+                    + " (" + COLUMN_SUBJECT_CODE + ", " + COLUMN_SUBJECT_NAME + ", "
+                    + COLUMN_BLOCK_CODE + ", " + COLUMN_SUBJECT_SCHEDULE + ", "
+                    + COLUMN_FACULTY_ID + ", " + COLUMN_SECTION_CODE + ") VALUES"
+                    + " (" + inputSubjCode + ", " + inputSubjName + ", "
+                    + inputBlockCode + ", " + inputSubjSched + ", "
+                    + facultyId + ", " + inputSectionCode + ");";
+            db.execSQL(query);
+        }
+    }
+    public void inputEnrollmentValues(SQLiteDatabase db, int inputStudentId, int inputBlockCode) {
+        String query = "INSERT INTO " + TB_ENROLLMENTS
+                + " (" + COLUMN_STUDENT_ID + ", " + COLUMN_BLOCK_CODE + ") VALUES"
+                + " (" + inputStudentId + ", " + inputBlockCode + ");";
+        db.execSQL(query);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
