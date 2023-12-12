@@ -8,8 +8,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Objects;
-
 public class EnrollCongratulations extends AppCompatActivity {
     private String lastName, firstName, middleName, birthDate, email, password, program, specialization, sex, religion, citizenship, fullAddress, zipCode, mobileNumber, elemSchool, jhSchool, shSchool;
     private int yearLevel, semester, age;
@@ -59,7 +57,7 @@ public class EnrollCongratulations extends AppCompatActivity {
         Log.d("ERROR CHECK", String.valueOf(juniorGrade));
         Log.d("ERROR CHECK", String.valueOf(seniorGrade));
 
-        Student studentHelper = new Student(this,lastName, firstName, middleName, birthDate, email, password, yearLevel, semester, program, specialization, age, sex, religion, citizenship, fullAddress, zipCode, mobileNumber, elemSchool, elemGrade, jhSchool, juniorGrade, shSchool, seniorGrade);
+        StudentHandler studentHelper = new StudentHandler(this,lastName, firstName, middleName, birthDate, email, password, yearLevel, semester, program, specialization, age, sex, religion, citizenship, fullAddress, zipCode, mobileNumber, elemSchool, elemGrade, jhSchool, juniorGrade, shSchool, seniorGrade);
 
         //IMPORTANT: This clears all of the previous activities from the stack so that you can't go back to the enrollment pages
         Intent intent = new Intent(this, StartScreen.class);

@@ -223,6 +223,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
+<<<<<<< HEAD
 
     public void createStudentInfoTable(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME +
@@ -326,4 +327,6 @@ public abstract class DBHandler extends SQLiteOpenHelper {
             // Handle the exception
         }
     }
+=======
+>>>>>>> 03d1c9d (wutdahel omahgad nowayay~)
 }

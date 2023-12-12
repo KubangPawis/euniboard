@@ -6,16 +6,15 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
-public class Student extends DBHandler {
-
+public class StudentHandler extends DBHandler {
 
     //CONSTRUCTOR FOR INSERTING STUDENT DATA TO DATABASE
-    public Student(@Nullable Context context, String lastName, String firstName, String middleName, String birthDate, String email, String password, int yearLevel, int semester, String program, String specialization, int age, String sex, String religion, String citizenship, String fullAddress, String zipCode, String mobileNumber, String elemSchool, double elemGWA, String jhSchool, double jhsGWA, String shSchool, double shsGWA) {
+    public StudentHandler(@Nullable Context context, String lastName, String firstName, String middleName, String birthDate, String email, String password, int yearLevel, int semester, String program, String specialization, int age, String sex, String religion, String citizenship, String fullAddress, String zipCode, String mobileNumber, String elemSchool, double elemGWA, String jhSchool, double jhsGWA, String shSchool, double shsGWA) {
         super(context);
         addStudent(lastName, firstName, middleName, birthDate, email, password, yearLevel, semester, program, specialization, age, sex, religion, citizenship, fullAddress, zipCode, mobileNumber, elemSchool, elemGWA, jhSchool, jhsGWA, shSchool, shsGWA);
     }
 
-    public Student(@Nullable Context context) {
+    public StudentHandler(@Nullable Context context) {
         super(context);
     }
     protected void addStudent(String lastName, String firstName, String middleName, String birthDate, String email, String password, int yearLevel, int semester, String program, String specialization, int age, String sex, String religion, String citizenship, String fullAddress, String zipCode, String mobileNumber, String elemSchool, double elemGWA, String jhSchool, double jhsGWA, String shSchool, double shsGWA) {

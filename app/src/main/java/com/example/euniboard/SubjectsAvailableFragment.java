@@ -22,7 +22,6 @@ public class SubjectsAvailableFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        //BLUR BG METHOD
         View rootView = inflater.inflate(R.layout.fragment_subjects_available, container, false);
         LinearLayout linearSubjects = rootView.findViewById(R.id.linearSubjects);
 

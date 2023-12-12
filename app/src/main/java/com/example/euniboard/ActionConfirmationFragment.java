@@ -56,8 +56,8 @@ public class ActionConfirmationFragment extends Fragment {
         Button btnYes = rootView.findViewById(R.id.btnYes);
         Button btnNo = rootView.findViewById(R.id.btnNo);
 
-        btnYes.setOnClickListener(this::goToViewSubjects);
-        btnNo.setOnClickListener(this::goToViewGrades);
+//        btnYes.setOnClickListener(this::goToViewSubjects);
+//        btnNo.setOnClickListener(this::goToViewGrades);
 
         return rootView;
     }
@@ -87,13 +87,13 @@ public class ActionConfirmationFragment extends Fragment {
 
         return outputBitmap;
     }
-    public void confirmAction(View v) {
-        FragmentManager fragmentManager = getParentFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.fragment_container_view, fragment)
-                .addToBackStack(null)
-                .commit();
-    }
+//    public void confirmAction(View v) {
+//        FragmentManager fragmentManager = getParentFragmentManager();
+//        fragmentManager.beginTransaction()
+//                .replace(R.id.fragment_container_view, fragment)
+//                .addToBackStack(null)
+//                .commit();
+//    }
 
     public void goBack(View v) {
         getActivity().onBackPressed();

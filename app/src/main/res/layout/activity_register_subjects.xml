@@ -181,6 +181,7 @@
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/btn_orange_rounded_drop"
                 android:clickable="true"
+                android:visibility="invisible"
                 android:fontFamily="@font/raleway_extrabold"
                 android:gravity="center"
                 android:text="Register Block"

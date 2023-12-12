@@ -7,33 +7,42 @@
     android:background="#692626"
     tools:context=".StartScreen">
 
-    <Button
-        android:id="@+id/btnYes"
-        android:layout_width="290dp"
-        android:layout_height="68dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/btn_white_rounded_inner"
-        android:fontFamily="@font/raleway_extrabold"
-        android:text="YES"
-        android:textColor="#9B3838"
-        android:textSize="23sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnNo"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/mseuf_mascot">
 
-    <Button
-        android:id="@+id/btnNo"
-        android:layout_width="290dp"
-        android:layout_height="68dp"
-        android:layout_marginBottom="80dp"
-        android:background="@drawable/btn_white_rounded_inner"
-        android:fontFamily="@font/raleway_extrabold"
-        android:text="NO"
-        android:textColor="#9B3838"
-        android:textSize="23sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/btnYes"
+            android:layout_width="290dp"
+            android:layout_height="68dp"
+            android:background="@drawable/btn_white_rounded_inner"
+            android:fontFamily="@font/raleway_extrabold"
+            android:text="YES"
+            android:textColor="#9B3838"
+            android:textSize="23sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnNo"
+            android:layout_width="290dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_white_rounded_inner"
+            android:fontFamily="@font/raleway_extrabold"
+            android:text="NO"
+            android:textColor="#9B3838"
+            android:textSize="23sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnYes"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -58,16 +67,16 @@
     </FrameLayout>
 
     <ImageView
+        android:id="@+id/mseuf_mascot"
         android:layout_width="wrap_content"
         android:layout_height="230dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
         android:scaleType="fitCenter"
         android:src="@drawable/mseuf_mascot"
-        app:layout_constraintBottom_toTopOf="btnYes"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleGroup" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleGroup"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/titleGroup"
