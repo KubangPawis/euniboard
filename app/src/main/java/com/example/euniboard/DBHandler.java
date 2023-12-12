@@ -56,7 +56,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     private static final String COLUMN_SECTION_CODE = "section_code";
     private static final String COLUMN_ENROLLMENT_ID = "enrollment_id";
 
-    private String[] blockNames = {"Block 1", "Block 2", "Block 3", "Block 4"};
+    private String[] blockNames = {"Block 1", "Block 2"};
     private String[] subjectCodes = {"CP100", "CP101", "CSMAT100", "CSPY100", "ENG100", "EU111", "MAMW100", "NROTC1", "NSTP1",
                                     "PE01", "SOC100", "COM100", "CP102", "CSDS101", "CSMAT101", "EU112", "NROTC2", "NSTP2",
                                     "PE02", "SOC101", "CP103", "CSDS102", "CSMAT102", "CSNC101", "CSOP01", "HUM100", "PE03", "SOC102"};
@@ -133,11 +133,9 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_SUBJECT_CODE + " TEXT, "
                 + COLUMN_SUBJECT_NAME + " TEXT, "
                 + COLUMN_BLOCK_CODE + " INTEGER, "
-                + COLUMN_SEMESTER + " INTEGER, "
                 + COLUMN_SUBJECT_SCHEDULE + " TEXT, "
                 + COLUMN_FACULTY_ID + " INTEGER, "
                 + COLUMN_SECTION_CODE + " TEXT, "
-                + "FOREIGN KEY (semester) REFERENCES BlockSection(semester),"
                 + "FOREIGN KEY (block_code) REFERENCES BlockSection(block_code),"
                 + "FOREIGN KEY (faculty_id) REFERENCES Faculty(faculty_id)"
                 + ") ";
