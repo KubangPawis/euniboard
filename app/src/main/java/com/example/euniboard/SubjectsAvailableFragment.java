@@ -40,11 +40,11 @@ public class SubjectsAvailableFragment extends Fragment {
         );
 
         for (String subject : subjectList) {
-            View itemView = getLayoutInflater().inflate(R.layout.layout_subject_panel, null);
-            TextView titleTextView = itemView.findViewById(R.id.lblSubject);
+            View itemView = getLayoutInflater().inflate(R.layout.layout_grade_panel, null);
+            //TextView titleTextView = itemView.findViewById(R.id.lblSubject);
 
             // Set data to TextViews or views in the item layout
-            titleTextView.setText(subject); // Replace with actual data retrieval
+            //titleTextView.setText(subject); // Replace with actual data retrieval
 
             itemView.setLayoutParams(layoutParams);
             linearSubjects.addView(itemView);

@@ -131,40 +131,42 @@ public class RegisterSubject extends AppCompatActivity {
 
         //DIMENSION CONVERSION (dp to pixel)
         float widthDP = 150f;
-        float heightDP = 30f;
+        float heightDP = 40f;
         float scale = getResources().getDisplayMetrics().density;
         int widthPX = (int) (widthDP * scale + 0.5f);
         int heightPX = (int) (heightDP * scale + 0.5f);
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(widthPX, heightPX);
 
-        for (int i=0; i<availableSubjects.getCount(); i++) {
-            int subjectCode_index = availableSubjects.getColumnIndex("subject_code");
-            int subjectName_index = availableSubjects.getColumnIndex("subject_name");
-            int sectionCode_index = availableSubjects.getColumnIndex("section_code");
-            int subjectSchedule_index = availableSubjects.getColumnIndex("subject_schedule");
-            String subjectCode = availableSubjects.getString(subjectCode_index);
-            String subjectName = availableSubjects.getString(subjectName_index);
-            String sectionCode = availableSubjects.getString(sectionCode_index);
-            String subjectSchedule = availableSubjects.getString(subjectSchedule_index);
+        if(availableSubjects != null && availableSubjects.moveToFirst()) {
+            do {
+                int subjectCode_index = availableSubjects.getColumnIndex("subject_code");
+                int subjectName_index = availableSubjects.getColumnIndex("subject_name");
+                int sectionCode_index = availableSubjects.getColumnIndex("section_code");
+                int subjectSchedule_index = availableSubjects.getColumnIndex("subject_schedule");
+                String subjectCode = availableSubjects.getString(subjectCode_index);
+                String subjectName = availableSubjects.getString(subjectName_index);
+                String sectionCode = availableSubjects.getString(sectionCode_index);
+                String subjectSchedule = availableSubjects.getString(subjectSchedule_index);
 
-            View itemView = getLayoutInflater().inflate(R.layout.layout_subject_register, null);
+                View itemView = getLayoutInflater().inflate(R.layout.layout_subject_register, null);
 
-            TextView lblSubjectCode = itemView.findViewById(R.id.lblSubjectCodePlaceholder);
-            TextView lblSubjectName = itemView.findViewById(R.id.lblSubjectNamePlaceholder);
-            TextView lblSectionCode = itemView.findViewById(R.id.lblSubjectSectionPlaceholder);
-            TextView lblSubjectSched = itemView.findViewById(R.id.lblSubjectSchedulePlaceholder);
+                TextView lblSubjectCode = itemView.findViewById(R.id.lblSubjectCodePlaceholder);
+                TextView lblSubjectName = itemView.findViewById(R.id.lblSubjectNamePlaceholder);
+                TextView lblSectionCode = itemView.findViewById(R.id.lblSubjectSectionPlaceholder);
+                TextView lblSubjectSched = itemView.findViewById(R.id.lblSubjectSchedulePlaceholder);
 
-            lblSubjectCode.setText(subjectCode);
-            lblSubjectName.setText(subjectName);
-            lblSectionCode.setText(sectionCode);
-            lblSubjectSched.setText(subjectSchedule);
+                lblSubjectCode.setText(subjectCode);
+                lblSubjectName.setText(subjectName);
+                lblSectionCode.setText(sectionCode);
+                lblSubjectSched.setText(subjectSchedule);
 
-            itemView.setLayoutParams(layoutParams);
-            linearSubjectShow.addView(itemView);
-            availableSubjects.moveToNext();
+                itemView.setLayoutParams(layoutParams);
+                linearSubjectShow.addView(itemView);
+                availableSubjects.moveToNext();
+            } while (availableSubjects.moveToNext());
+            availableSubjects.close();
         }
-        availableSubjects.close();
     }
 
     public void showConfirmation(View v) {

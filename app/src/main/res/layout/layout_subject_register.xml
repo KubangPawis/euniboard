@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="145dp"
-    android:layout_height="30dp">
+    android:layout_width="150dp"
+    android:layout_height="40dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -11,8 +11,8 @@
 
         <ImageView
             android:id="@+id/arrow_icon"
-            android:layout_width="8dp"
-            android:layout_height="8dp"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/arrow_icon"
@@ -28,7 +28,7 @@
             android:fontFamily="@font/raleway_medium"
             android:text="Subject Code"
             android:textColor="#222222"
-            android:textSize="8dp"
+            android:textSize="9dp"
             app:layout_constraintStart_toEndOf="@id/arrow_icon"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,9 +41,9 @@
             android:fontFamily="@font/raleway_medium"
             android:text="-"
             android:textColor="#222222"
-            android:textSize="8dp"
+            android:textSize="9dp"
             app:layout_constraintStart_toEndOf="@id/lblSubjectCodePlaceholder"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lblSubjectNamePlaceholder"
@@ -54,7 +54,7 @@
             android:fontFamily="@font/raleway_medium"
             android:text="Subject Name"
             android:textColor="#222222"
-            android:textSize="8dp"
+            android:textSize="9dp"
             app:layout_constraintStart_toEndOf="@id/lblHyphen"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,10 +62,10 @@
             android:id="@+id/lblSubjectSectionPlaceholder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_medium"
             android:text="SECTION"
             android:textColor="#222222"
-            android:textSize="5dp"
-            android:fontFamily="@font/raleway_medium"
+            android:textSize="7dp"
             app:layout_constraintStart_toStartOf="@id/lblSubjectCodePlaceholder"
             app:layout_constraintTop_toBottomOf="@id/lblSubjectCodePlaceholder" />
 
@@ -79,17 +79,17 @@
             android:textColor="#222222"
             android:textSize="5dp"
             app:layout_constraintStart_toEndOf="@id/lblSubjectSectionPlaceholder"
-            app:layout_constraintTop_toBottomOf="@id/lblSubjectCodePlaceholder"/>
+            app:layout_constraintTop_toBottomOf="@id/lblSubjectCodePlaceholder" />
 
         <TextView
             android:id="@+id/lblSubjectSchedulePlaceholder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
+            android:fontFamily="@font/raleway_medium"
             android:text="SCHEDULE"
             android:textColor="#222222"
-            android:textSize="5dp"
-            android:fontFamily="@font/raleway_medium"
+            android:textSize="7dp"
             app:layout_constraintStart_toEndOf="@id/lblHyphen2"
             app:layout_constraintTop_toBottomOf="@id/lblSubjectCodePlaceholder" />
 
