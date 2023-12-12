@@ -92,6 +92,8 @@ public abstract class DBHandler extends SQLiteOpenHelper {
         createFaculty(db);
         createSubject(db);
         createEnrollments(db);
+        createGrades(db);
+        createPayments(db);
     }
     public void createStudentInfoTable(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TB_STUDENT_INFO
