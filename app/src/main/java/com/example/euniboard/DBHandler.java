@@ -46,6 +46,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     private static final String COLUMN_SHS_GRADE = "shs_grade";
     private static final String COLUMN_BLOCK_CODE = "block_code";
     private static final String COLUMN_BLOCK_NAME = "block_name";
+    private static final String COLUMN_SEMESTER = "semester";
     private static final String COLUMN_FACULTY_ID = "faculty_id";
     private static final String COLUMN_FACULTY_NAME = "faculty_name";
     private static final String COLUMN_SUBJECT_ID = "subject_id";
@@ -70,8 +71,6 @@ public abstract class DBHandler extends SQLiteOpenHelper {
             "Joshua Michael Saberon", "Ashiel Bagnes", "Diane Matira", "Josephine Belen", "Victor Oribe", "Marie Grace Jasolin", "Cresencio Jaballa",
             "Decca Patricia Driz", "Hubert Loresto", "Macaulay Bagnate", "John Kristoffer Tibor", "Joel Rex Villasin", "Frisian Cruz"};
     private int years = 4;
-
-
     protected DBHandler(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
@@ -85,7 +84,6 @@ public abstract class DBHandler extends SQLiteOpenHelper {
         createSubject(db);
         createEnrollments(db);
     }
-
     public void createStudentInfoTable(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TB_STUDENT_INFO
                 + " (" + COLUMN_STUDENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -119,6 +117,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
         String query = "CREATE TABLE " + TB_BLOCK_SECTION
                 + " (" + COLUMN_BLOCK_CODE + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_BLOCK_NAME + " TEXT, "
+                + COLUMN_SEMESTER + " INTEGER, "
                 + COLUMN_YEAR_LEVEL + " INTEGER)";
         db.execSQL(query);
     }
@@ -134,6 +133,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_SUBJECT_CODE + " TEXT, "
                 + COLUMN_SUBJECT_NAME + " TEXT, "
                 + COLUMN_BLOCK_CODE + " INTEGER, "
+                + COLUMN_SEMESTER + " INTEGER, "
                 + COLUMN_SUBJECT_SCHEDULE + " TEXT, "
                 + COLUMN_FACULTY_ID + " INTEGER, "
                 + COLUMN_SECTION_CODE + " TEXT, "
