@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class EnrollCongratulations extends AppCompatActivity {
     private String lastName, firstName, middleName, birthDate, email, password, program, specialization, sex, religion, citizenship, fullAddress, zipCode, mobileNumber, elemSchool, jhSchool, shSchool;
-    private int yearLevel, age;
+    private int yearLevel, semester, age;
     private double elemGrade, juniorGrade, seniorGrade;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class EnrollCongratulations extends AppCompatActivity {
             email = intent.getStringExtra("email");
             password = intent.getStringExtra("password");
             yearLevel = intent.getIntExtra("year_level", 0);
+            semester = intent.getIntExtra("semester", 0);
             program = intent.getStringExtra("program");
             specialization = intent.getStringExtra("specialization");
             age = intent.getIntExtra("age", 0);
@@ -58,7 +59,7 @@ public class EnrollCongratulations extends AppCompatActivity {
         Log.d("ERROR CHECK", String.valueOf(juniorGrade));
         Log.d("ERROR CHECK", String.valueOf(seniorGrade));
 
-        Student studentHelper = new Student(this,lastName, firstName, middleName, birthDate, email, password, yearLevel, program, specialization, age, sex, religion, citizenship, fullAddress, zipCode, mobileNumber, elemSchool, elemGrade, jhSchool, juniorGrade, shSchool, seniorGrade);
+        Student studentHelper = new Student(this,lastName, firstName, middleName, birthDate, email, password, yearLevel, semester, program, specialization, age, sex, religion, citizenship, fullAddress, zipCode, mobileNumber, elemSchool, elemGrade, jhSchool, juniorGrade, shSchool, seniorGrade);
 
         //IMPORTANT: This clears all of the previous activities from the stack so that you can't go back to the enrollment pages
         Intent intent = new Intent(this, StartScreen.class);

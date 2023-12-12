@@ -17,7 +17,7 @@ import java.util.Objects;
 
 public class EnrollAdditional extends AppCompatActivity {
     private String lastName, firstName, middleName, birthDate, email, password, program, specialization;
-    private int yearLevel;
+    private int yearLevel, semester;
     private String sex, religion, citizenship, fullAddress, zipCode, mobileNumber;
     private int age;
     @Override
@@ -53,6 +53,7 @@ public class EnrollAdditional extends AppCompatActivity {
             email = intent.getStringExtra("email");
             password = intent.getStringExtra("password");
             yearLevel = intent.getIntExtra("year_level", 0);
+            semester = intent.getIntExtra("semester", 0);
             program = intent.getStringExtra("program");
             specialization = intent.getStringExtra("specialization");
         }
@@ -83,6 +84,7 @@ public class EnrollAdditional extends AppCompatActivity {
         intent.putExtra("email", email);
         intent.putExtra("password", password);
         intent.putExtra("year_level", yearLevel);
+        intent.putExtra("semester", semester);
         intent.putExtra("program", program);
         intent.putExtra("specialization", specialization);
         intent.putExtra("age", age);

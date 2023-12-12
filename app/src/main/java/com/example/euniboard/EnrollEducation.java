@@ -14,7 +14,7 @@ import java.util.Objects;
 
 public class EnrollEducation extends AppCompatActivity {
     private String lastName, firstName, middleName, birthDate, email, password, program, specialization, sex, religion, citizenship, fullAddress, zipCode, mobileNumber;
-    private int yearLevel, age;
+    private int yearLevel, semester, age;
     private String elemSchool, jhSchool, shSchool;
     private double elemGrade, juniorGrade, seniorGrade;
 
@@ -36,6 +36,7 @@ public class EnrollEducation extends AppCompatActivity {
             email = intent.getStringExtra("email");
             password = intent.getStringExtra("password");
             yearLevel = intent.getIntExtra("year_level", 0);
+            semester = intent.getIntExtra("semester", 0);
             program = intent.getStringExtra("program");
             specialization = intent.getStringExtra("specialization");
             age = intent.getIntExtra("age", 0);
@@ -70,6 +71,7 @@ public class EnrollEducation extends AppCompatActivity {
         intent.putExtra("email", email);
         intent.putExtra("password", password);
         intent.putExtra("year_level", yearLevel);
+        intent.putExtra("semester", semester);
         intent.putExtra("program", program);
         intent.putExtra("specialization", specialization);
         intent.putExtra("age", age);

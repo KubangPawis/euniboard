@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#692626"
+    tools:context=".StartScreen">
+
+    <Button
+        android:id="@+id/btnYes"
+        android:layout_width="290dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_white_rounded_inner"
+        android:fontFamily="@font/raleway_extrabold"
+        android:text="YES"
+        android:textColor="#9B3838"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnNo"
+        android:layout_width="290dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/btn_white_rounded_inner"
+        android:fontFamily="@font/raleway_extrabold"
+        android:text="NO"
+        android:textColor="#9B3838"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="230dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mseuf_mascot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleGroup"
+        app:layout_constraintBottom_toTopOf="btnYes"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logo_mseuf"
+            android:layout_width="550dp"
+            android:layout_height="550dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="-165dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.5"
+            android:rotation="-15"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo_mseuf" />
+
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="276dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="You are about to be redirected to an external page. Do you want to continue?"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="@font/raleway_semibold"
+            app:autoSizeMaxTextSize="24sp"
+            app:autoSizeMinTextSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_black"
+            android:text="Redirecting..."
+            android:textColor="#FFFFFF"
+            android:textSize="43sp"
+            app:autoSizeMaxTextSize="72sp"
+            app:autoSizeMinTextSize="43sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

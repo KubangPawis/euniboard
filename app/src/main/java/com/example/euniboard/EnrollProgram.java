@@ -15,7 +15,7 @@ import androidx.core.content.ContextCompat;
 
 public class EnrollProgram extends AppCompatActivity {
     private String lastName, firstName, middleName, birthDate, email, password;
-    private int yearLevel;
+    private int yearLevel, semester;
     private String program, specialization;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +23,14 @@ public class EnrollProgram extends AppCompatActivity {
         setContentView(R.layout.activity_enroll_program);
 
         setSpinYear();
+        setSpinSemester();
         setSpinProgram();
         setSpinSpecialization();
 
         //EVENTS
         Button btnNext = findViewById(R.id.btnNext);
         Spinner spinYearLevel = findViewById(R.id.spinYearLvl);
+        Spinner spinSemester = findViewById(R.id.spinSemester);
         Spinner spinProgram = findViewById(R.id.spinProgram);
         Spinner spinSpecialization = findViewById(R.id.spinSpecialization);
 
@@ -51,7 +53,24 @@ public class EnrollProgram extends AppCompatActivity {
                         break;
                 }
             }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+        spinSemester.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String semesterStr = parent.getItemAtPosition(position).toString();
+                switch(semesterStr) {
+                    case "1st Semester":
+                        semester = 1;
+                        break;
+                    case "2nd Semester":
+                        semester = 2;
+                        break;
+                }
+            }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -62,7 +81,6 @@ public class EnrollProgram extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 program = parent.getItemAtPosition(position).toString();
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -73,7 +91,6 @@ public class EnrollProgram extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 specialization = parent.getItemAtPosition(position).toString();
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -101,6 +118,7 @@ public class EnrollProgram extends AppCompatActivity {
         intent.putExtra("email", email);
         intent.putExtra("password", password);
         intent.putExtra("year_level", yearLevel);
+        intent.putExtra("semester", semester);
         intent.putExtra("program", program);
         intent.putExtra("specialization", specialization);
 
@@ -116,6 +134,17 @@ public class EnrollProgram extends AppCompatActivity {
         yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinYear.setBackground(ContextCompat.getDrawable(this, R.drawable.spinner_arrow));
         spinYear.setAdapter(yearAdapter);
+    }
+    public void setSpinSemester() {
+        Spinner spinSemester = findViewById(R.id.spinSemester);
+        ArrayAdapter<CharSequence> yearAdapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.enrollment_semester,
+                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item
+        );
+        yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinSemester.setBackground(ContextCompat.getDrawable(this, R.drawable.spinner_arrow));
+        spinSemester.setAdapter(yearAdapter);
     }
     public void setSpinProgram() {
         Spinner spinProgram = findViewById(R.id.spinProgram);

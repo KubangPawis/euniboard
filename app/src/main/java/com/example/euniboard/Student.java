@@ -10,20 +10,15 @@ public class Student extends DBHandler {
 
 
     //CONSTRUCTOR FOR INSERTING STUDENT DATA TO DATABASE
-    public Student(@Nullable Context context, String lastName, String firstName, String middleName, String birthDate, String email, String password, int yearLevel, String program, String specialization, int age, String sex, String religion, String citizenship, String fullAddress, String zipCode, String mobileNumber, String elemSchool, double elemGWA, String jhSchool, double jhsGWA, String shSchool, double shsGWA) {
+    public Student(@Nullable Context context, String lastName, String firstName, String middleName, String birthDate, String email, String password, int yearLevel, int semester, String program, String specialization, int age, String sex, String religion, String citizenship, String fullAddress, String zipCode, String mobileNumber, String elemSchool, double elemGWA, String jhSchool, double jhsGWA, String shSchool, double shsGWA) {
         super(context);
-        addStudent(lastName, firstName, middleName, birthDate, email, password, yearLevel, program, specialization, age, sex, religion, citizenship, fullAddress, zipCode, mobileNumber, elemSchool, elemGWA, jhSchool, jhsGWA, shSchool, shsGWA);
+        addStudent(lastName, firstName, middleName, birthDate, email, password, yearLevel, semester, program, specialization, age, sex, religion, citizenship, fullAddress, zipCode, mobileNumber, elemSchool, elemGWA, jhSchool, jhsGWA, shSchool, shsGWA);
     }
 
     public Student(@Nullable Context context) {
         super(context);
     }
-
-    protected void addSubject() {
-
-    }
-
-    protected void addStudent(String lastName, String firstName, String middleName, String birthDate, String email, String password, int yearLevel, String program, String specialization, int age, String sex, String religion, String citizenship, String fullAddress, String zipCode, String mobileNumber, String elemSchool, double elemGWA, String jhSchool, double jhsGWA, String shSchool, double shsGWA) {
+    protected void addStudent(String lastName, String firstName, String middleName, String birthDate, String email, String password, int yearLevel, int semester, String program, String specialization, int age, String sex, String religion, String citizenship, String fullAddress, String zipCode, String mobileNumber, String elemSchool, double elemGWA, String jhSchool, double jhsGWA, String shSchool, double shsGWA) {
         ContentValues studentInfo = new ContentValues();
         studentInfo.put("last_name", lastName);
         studentInfo.put("first_name", firstName);
@@ -32,6 +27,7 @@ public class Student extends DBHandler {
         studentInfo.put("email", email);
         studentInfo.put("password", password);
         studentInfo.put("year_level", yearLevel);
+        studentInfo.put("semester", semester);
         studentInfo.put("program", program);
         studentInfo.put("specialization", specialization);
         studentInfo.put("age", age);
