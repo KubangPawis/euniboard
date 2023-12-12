@@ -2,6 +2,7 @@ package com.example.euniboard;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -19,8 +20,13 @@ public class MainMenu extends AppCompatActivity {
 
         //EVENTS
         Intent intent = getIntent();
+        String menuGreeting = "";
         CurrentStudent loggedStudent = intent.getParcelableExtra("currently_logged_student");
-        String menuGreeting = "Hi" + loggedStudent.getFirstName();
+        if(loggedStudent != null) {
+            menuGreeting = "Hi " + loggedStudent.getFirstName();
+            Log.d("GREETING CHECK", "First Name: " + loggedStudent.getFirstName());
+        }
+
 
         TextView lblNameGreeting = findViewById(R.id.lblNameGreeting);
         lblNameGreeting.setText(menuGreeting);
@@ -92,9 +98,6 @@ public class MainMenu extends AppCompatActivity {
     }
     public void openOSAS(View v, CurrentStudent loggedStudent) {
         OsasFragment osasFragment = new OsasFragment();
-        Bundle studentBundle = new Bundle();
-        studentBundle.putParcelable("currently_logged_student", loggedStudent);
-        osasFragment.setArguments(studentBundle);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.screenLayout, osasFragment)
                 .addToBackStack(null)

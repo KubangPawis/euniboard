@@ -54,8 +54,12 @@ public class FacultyFragment extends Fragment {
         //EVENTS
         ImageView btnClose = rootView.findViewById(R.id.btnClose);
         Button btnViewFaculty = rootView.findViewById(R.id.btnViewFaculty);
+
+        Bundle args = getArguments();
+        CurrentStudent loggedStudent = args.getParcelable("currently_logged_student"); //Pass in data to the current fragment
+
         btnClose.setOnClickListener(e -> exitFragment());
-        btnViewFaculty.setOnClickListener(this::goToViewFaculty);
+        btnViewFaculty.setOnClickListener(e -> goToViewFaculty(e, loggedStudent));
 
         return rootView;
     }
@@ -85,8 +89,9 @@ public class FacultyFragment extends Fragment {
 
         return outputBitmap;
     }
-    public void goToViewFaculty(View v) {
+    public void goToViewFaculty(View v, CurrentStudent loggedStudent) {
         Intent intent = new Intent(getActivity(), ViewFaculty.class);
+        intent.putExtra("currently_logged_student", loggedStudent);
         startActivity(intent);
     }
 

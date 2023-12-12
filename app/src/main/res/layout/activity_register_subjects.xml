@@ -47,6 +47,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/lblCurrentYear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_medium"
@@ -162,7 +163,67 @@
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/line_vertical"
-                app:layout_constraintTop_toBottomOf="@id/line_horizontal"></LinearLayout>
+                app:layout_constraintTop_toBottomOf="@id/line_horizontal">
+
+                <FrameLayout
+                    android:id="@+id/btnBlock1"
+                    android:layout_width="130dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/iconBlock1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="start|center"
+                        android:background="@drawable/block_folder_maroon"
+                        android:clickable="true"/>
+
+                    <TextView
+                        android:id="@+id/lblBlock1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="start|center"
+                        android:text="BSCS - Block 1"
+                        android:textSize="12dp"
+                        android:textColor="#6C2929"
+                        android:fontFamily="@font/raleway_extrabold"
+                        android:clickable="true"/>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/btnBlock2"
+                    android:layout_width="130dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/iconBlock2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="start|center"
+                        android:background="@drawable/block_folder_maroon"
+                        android:clickable="true"/>
+
+                    <TextView
+                        android:id="@+id/lblBlock2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="start|center"
+                        android:text="BSCS - Block 2"
+                        android:textSize="12dp"
+                        android:textColor="#6C2929"
+                        android:fontFamily="@font/raleway_extrabold"
+                        android:clickable="true"/>
+
+                </FrameLayout>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linearSubjectShow"

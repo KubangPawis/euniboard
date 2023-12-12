@@ -234,7 +234,30 @@ public class CurrentStudent implements Parcelable {
     }
     @Override
     public void writeToParcel(@NonNull Parcel dest, int flags) {
-
+        dest.writeInt(this.studentID);
+        dest.writeString(this.lastName);
+        dest.writeString(this.firstName);
+        dest.writeString(this.middleName);
+        dest.writeString(this.birthDate);
+        dest.writeString(this.email);
+        dest.writeString(this.password);
+        dest.writeInt(this.yearLevel);
+        dest.writeInt(this.semester);
+        dest.writeString(this.program);
+        dest.writeString(this.specialization);
+        dest.writeInt(this.age);
+        dest.writeString(this.sex);
+        dest.writeString(this.religion);
+        dest.writeString(this.citizenship);
+        dest.writeString(this.fullAddress);
+        dest.writeString(this.zipCode);
+        dest.writeString(this.mobileNumber);
+        dest.writeString(this.elemSchool);
+        dest.writeDouble(this.elemGWA);
+        dest.writeString(this.jhSchool);
+        dest.writeDouble(this.jhsGWA);
+        dest.writeString(this.shSchool);
+        dest.writeDouble(this.shsGWA);
     }
     public static final Parcelable.Creator<CurrentStudent> CREATOR = new Parcelable.Creator<CurrentStudent>() {
         @Override
@@ -248,5 +271,29 @@ public class CurrentStudent implements Parcelable {
         }
     };
     protected CurrentStudent(Parcel in) {
+        this.studentID = in.readInt();
+        this.lastName = in.readString();
+        this.firstName = in.readString();
+        this.middleName = in.readString();
+        this.birthDate = in.readString();
+        this.email = in.readString();
+        this.password = in.readString();
+        this.yearLevel = in.readInt();
+        this.semester = in.readInt();
+        this.program = in.readString();
+        this.specialization = in.readString();
+        this.age = in.readInt();
+        this.sex = in.readString();
+        this.religion = in.readString();
+        this.citizenship = in.readString();
+        this.fullAddress = in.readString();
+        this.zipCode = in.readString();
+        this.mobileNumber = in.readString();
+        this.elemSchool = in.readString();
+        this.elemGWA = in.readDouble();
+        this.jhSchool = in.readString();
+        this.jhsGWA = in.readDouble();
+        this.shSchool = in.readString();
+        this.shsGWA = in.readDouble();
     }
 }

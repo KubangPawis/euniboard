@@ -17,13 +17,12 @@ public class ProfileMenu extends AppCompatActivity {
 
         //EVENTS
         Button btnChangeEmail = findViewById(R.id.btnChangeEmail);
-        btnChangeEmail.setOnClickListener(e -> changeEmail());
+//        btnChangeEmail.setOnClickListener(e -> changeEmail());
 
         Button btnChangePassword = findViewById(R.id.btnChangePassword);
-        btnChangePassword.setOnClickListener(e -> changePassword());
+//        btnChangePassword.setOnClickListener(e -> changePassword());
 
         ImageView btnLogOut = findViewById(R.id.btnLogOut);
-        btnLogOut.setOnClickListener(e -> userLogOut());
+//        btnLogOut.setOnClickListener(e -> userLogOut());
     }
-
 }

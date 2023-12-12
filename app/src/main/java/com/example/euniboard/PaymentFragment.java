@@ -51,6 +51,9 @@ public class PaymentFragment extends Fragment {
 
         //EVENTS
         ImageView btnClose = rootView.findViewById(R.id.btnClose);
+        Bundle args = getArguments();
+        CurrentStudent loggedStudent = args.getParcelable("currently_logged_student"); //Pass in data to the current fragment
+
         btnClose.setOnClickListener(e -> exitFragment());
 
         return rootView;

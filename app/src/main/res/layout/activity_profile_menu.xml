@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
@@ -21,11 +20,10 @@
         android:id="@+id/imageView5"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginBottom="173dp"
-        android:src="@drawable/EUniBoard_Logo_Style_2"
-        app:layout_constraintBottom_toTopOf="@+id/profile_bg"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="-20dp"
+        android:src="@drawable/euniboard_logo3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/profile_bg"
@@ -185,12 +183,11 @@
         android:id="@+id/frameLayout2"
         android:layout_width="331dp"
         android:layout_height="93dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/dsos_profile"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout">
 
         <TextView
             android:id="@+id/textView6"
@@ -244,7 +241,7 @@
             android:layout_gravity="start"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/studentNo_icon" />
+            android:src="@drawable/student_profile_icon" />
 
         <ImageView
             android:id="@+id/phoneNo"
@@ -253,14 +250,14 @@
             android:layout_gravity="end"
             android:layout_marginTop="20dp"
             android:layout_marginRight="125dp"
-            android:src="@drawable/phoneNo_icon" />
+            android:src="@drawable/phone_icon" />
     </FrameLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

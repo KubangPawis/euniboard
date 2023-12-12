@@ -14,6 +14,10 @@ public class ViewSubjects extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_subjects);
 
+        Intent intent = getIntent();
+        CurrentStudent loggedStudent = intent.getParcelableExtra("currently_logged_student");
+
+        //ENROLLMENT CHECK
         boolean isAvailable = false;
 
         if(isAvailable) {
@@ -25,7 +29,7 @@ public class ViewSubjects extends AppCompatActivity {
 
         //EVENTS
         ImageView btnAdd = findViewById(R.id.btnAdd);
-        btnAdd.setOnClickListener(e -> goToRegisterSubjects());
+        btnAdd.setOnClickListener(e -> goToRegisterSubjects(e, loggedStudent));
     }
 
     public void openSubjectsAvailable() {
@@ -40,8 +44,9 @@ public class ViewSubjects extends AppCompatActivity {
                 .replace(R.id.fragmentContainer, frag)
                 .commit();
     }
-    public void goToRegisterSubjects() {
+    public void goToRegisterSubjects(View v, CurrentStudent loggedStudent) {
         Intent intent = new Intent(this, RegisterSubject.class);
+        intent.putExtra("currently_logged_student", loggedStudent);
         startActivity(intent);
     }
 }
