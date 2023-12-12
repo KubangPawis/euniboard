@@ -40,7 +40,6 @@ public class SubjectsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        //BLUR BG METHOD
         View rootView = inflater.inflate(R.layout.fragment_subjects, container, false);
 
         //EVENTS
@@ -56,31 +55,6 @@ public class SubjectsFragment extends Fragment {
         btnViewGrades.setOnClickListener(e -> goToViewGrades(loggedStudent));
 
         return rootView;
-    }
-    public static Bitmap getScreenShot(View view) {
-        view.setDrawingCacheEnabled(true);
-        Bitmap screenshot = Bitmap.createBitmap(view.getDrawingCache());
-        view.setDrawingCacheEnabled(false);
-        return screenshot;
-    }
-
-    public static Bitmap blurBitmap(Context context, Bitmap inputBitmap, float radius) {
-        if (inputBitmap == null) return null;
-
-        Bitmap outputBitmap = Bitmap.createBitmap(inputBitmap.getWidth(), inputBitmap.getHeight(), Bitmap.Config.ARGB_8888);
-
-        RenderScript renderScript = RenderScript.create(context);
-        ScriptIntrinsicBlur scriptIntrinsicBlur = ScriptIntrinsicBlur.create(renderScript, Element.U8_4(renderScript));
-        Allocation tmpIn = Allocation.createFromBitmap(renderScript, inputBitmap);
-        Allocation tmpOut = Allocation.createFromBitmap(renderScript, outputBitmap);
-        scriptIntrinsicBlur.setRadius(radius);
-        scriptIntrinsicBlur.setInput(tmpIn);
-        scriptIntrinsicBlur.forEach(tmpOut);
-        tmpOut.copyTo(outputBitmap);
-
-        renderScript.destroy();
-
-        return outputBitmap;
     }
     public void goToViewSubjects(CurrentStudent loggedStudent) {
         Intent intent = new Intent(getActivity(), ViewSubjects.class);

@@ -1,5 +1,6 @@
 package com.example.euniboard;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 
 public class RegisterSubject extends AppCompatActivity {
     StudentHandler enrollStudent;
+    int selectedBlockCode;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +28,13 @@ public class RegisterSubject extends AppCompatActivity {
         //LOAD DATABASE
         enrollStudent = new StudentHandler(this);
         SQLiteDatabase db = enrollStudent.getReadableDatabase();
+        SQLiteDatabase writable_db = enrollStudent.getWritableDatabase();
         Log.d("ERROR CHECK", "ERROR CHECK #1");
 
         //LOAD CURRENT STUDENT CLASS and STUDENT'S YEAR LEVEL
         Intent intent = getIntent();
         CurrentStudent loggedStudent = intent.getParcelableExtra("currently_logged_student");
+        int studentID = loggedStudent.getStudentID();
         int yearLevel = loggedStudent.getYearLevel();
         int semester = loggedStudent.getSemester();
 
@@ -85,13 +89,18 @@ public class RegisterSubject extends AppCompatActivity {
         btnBlock2.setOnClickListener(e -> showBlockSubject(db, availableBlockList.get(1)));
         iconBlock2.setOnClickListener(e -> showBlockSubject(db, availableBlockList.get(1)));
         lblBlock2.setOnClickListener(e -> showBlockSubject(db, availableBlockList.get(1)));
-        btnRegister.setOnClickListener(this::showConfirmation);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addToEnrollment(writable_db, studentID, selectedBlockCode);
+                goBackToMainMenu(v);
+            }
+        });
     }
 
     public ArrayList<Integer> getAvailableBlocks(SQLiteDatabase db, int currentYearLvl, int currentSemester) {
         ArrayList <Integer> availableBlockList = new ArrayList<>();
         String query = "SELECT block_code FROM BlockSection WHERE year_level = ? AND semester = ?;";
-        Log.d("ERROR CHECK", "ERROR CHECK #4");
         Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(currentYearLvl), String.valueOf(currentSemester)});
 
         if(cursor != null && cursor.moveToFirst()) {
@@ -104,19 +113,16 @@ public class RegisterSubject extends AppCompatActivity {
             cursor.close();
             return availableBlockList;
         }
-
         else {
             return null;
         }
     }
-
     public Cursor getAvailableSubjects(SQLiteDatabase db, int blockCode) {
         String query = "SELECT * FROM Subjects WHERE block_code = ?;";
         Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(blockCode)});
         if(cursor != null) {
             return cursor;
         }
-
         else {
             return null;
         }
@@ -125,9 +131,11 @@ public class RegisterSubject extends AppCompatActivity {
         LinearLayout linearSubjectShow = findViewById(R.id.linearSubjectShow);
         linearSubjectShow.removeAllViews(); //remove all exiting subject views on every button click, then repopulate
         Cursor availableSubjects = getAvailableSubjects(db, blockCode);
+        selectedBlockCode = blockCode;
 
         Button btnRegister = findViewById(R.id.btnRegister);
         btnRegister.setVisibility(View.VISIBLE);
+        btnRegister.setOnClickListener(this::goBackToMainMenu);
 
         //DIMENSION CONVERSION (dp to pixel)
         float widthDP = 150f;
@@ -174,12 +182,16 @@ public class RegisterSubject extends AppCompatActivity {
             availableSubjects.close();
         }
     }
-
-    public void showConfirmation(View v) {
-        ActionConfirmationFragment confirmationFrag = new ActionConfirmationFragment();
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.screenLayout, confirmationFrag)
-                .addToBackStack(null)
-                .commit();
+    public void addToEnrollment(SQLiteDatabase db, int studentID, int blockCode) {
+        ContentValues values = new ContentValues();
+        values.put("student_id", studentID);
+        values.put("block_code", blockCode);
+        db.insert("Enrollments", null, values);
+    }
+    public void goBackToMainMenu(View v) {
+        //IMPORTANT: This clears all of the previous activities from the stack so that you can't go back to the enrollment pages
+        Intent intent = new Intent(this, MainMenu.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
