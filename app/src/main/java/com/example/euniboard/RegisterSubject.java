@@ -92,8 +92,8 @@ public class RegisterSubject extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("I GOT HERE!!", "I got here");
                 addToEnrollment(writable_db, studentID, selectedBlockCode);
-                goBackToMainMenu(v);
             }
         });
     }
@@ -135,7 +135,6 @@ public class RegisterSubject extends AppCompatActivity {
 
         Button btnRegister = findViewById(R.id.btnRegister);
         btnRegister.setVisibility(View.VISIBLE);
-        btnRegister.setOnClickListener(this::goBackToMainMenu);
 
         //DIMENSION CONVERSION (dp to pixel)
         float widthDP = 150f;
@@ -186,7 +185,12 @@ public class RegisterSubject extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put("student_id", studentID);
         values.put("block_code", blockCode);
-        db.insert("Enrollments", null, values);
+        long newStudentId = db.insert("Enrollments", null, values);
+        if (newStudentId != -1) {
+            Log.d("ENROLLMENT SUCCESSFUL", "Enrollment successful!");
+        } else {
+            Log.d("ENROLLMENT FAILED", "Enrollment failed.");
+        }
     }
     public void goBackToMainMenu(View v) {
         //IMPORTANT: This clears all of the previous activities from the stack so that you can't go back to the enrollment pages

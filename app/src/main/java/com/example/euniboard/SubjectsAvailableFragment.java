@@ -25,6 +25,8 @@ public class SubjectsAvailableFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_subjects_available, container, false);
         LinearLayout linearSubjects = rootView.findViewById(R.id.linearSubjects);
 
+        //EVENTS
+
         String[] subjectList = {"OOP", "Art Appreciation", "Swimming"};
 
         //DIMENSION CONVERSION (dp to pixel)
