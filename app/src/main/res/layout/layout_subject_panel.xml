@@ -2,98 +2,73 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="300dp"
-    android:layout_height="111dp"
-    android:background="@drawable/pnl_subject">
+    android:layout_width="356dp"
+    android:layout_height="60dp"
+    android:background="#F4F4F4">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/lblSectionEditable"
+            android:id="@+id/lblSubjectCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="Subject Code: Subject Name"
+            android:textColor="#514646"
+            android:textSize="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/lblSectionCode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="3dp"
-            android:fontFamily="@font/montserrat"
-            android:text="section"
-            android:textSize="8sp"
-            android:textColor="#FFFFFF"
-            app:layout_constraintStart_toEndOf="@+id/lblSection"
-            app:layout_constraintTop_toBottomOf="@+id/lblSubject"/>
-
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="Section: section code"
+            android:textColor="#514646"
+            android:textSize="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblSubjectCode" />
         <TextView
-            android:id="@+id/lblProfEditable"
+            android:id="@+id/lblGrade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="2dp"
-            android:text="professor"
-            android:textSize="8sp"
-            android:textColor="#FFFFFF"
-            app:layout_constraintStart_toEndOf="@+id/lblProfessor"
-            app:layout_constraintTop_toBottomOf="@+id/lblSectionEditable" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="14dp"
-            android:layout_height="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="15dp"
-            android:src="@drawable/_dots"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/raleway_extrabold"
+            android:text="99"
+            android:textColor="#408D34"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/lblRemarks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="PASSED"
+            android:textColor="#514646"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblGrade" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
-            android:src="@drawable/line_separator"
-            app:layout_constraintTop_toBottomOf="@+id/lblProfessor"
+            android:layout_marginBottom="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/register_line_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
-
-        <TextView
-            android:id="@+id/lblSubject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Subject Subject"
-            android:textColor="#FFFFFF"
-            android:textSize="14dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/lblSection"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Section:"
-            android:textColor="#FFFFFF"
-            android:textSize="8sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lblSubject" />
-
-        <TextView
-            android:id="@+id/lblProfessor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="2dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Professor:"
-            android:textColor="#FFFFFF"
-            android:textSize="8sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lblSection" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
