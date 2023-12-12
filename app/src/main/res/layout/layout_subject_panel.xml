@@ -22,16 +22,16 @@
             app:layout_constraintTop_toBottomOf="@id/lblSubjectName"
             app:layout_constraintStart_toEndOf="@id/lblSectionCode"/>
         <TextView
-            android:id="@+id/editableProfName"
+            android:id="@+id/editableSchedule"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginLeft="5dp"
-            android:text="professor name"
+            android:text="schedule name"
             android:textColor="#FFFFFF"
             android:textSize="10sp"
             app:layout_constraintTop_toBottomOf="@id/editableSectionCode"
-            app:layout_constraintStart_toEndOf="@id/lblProfessor"/>
+            app:layout_constraintStart_toEndOf="@id/lblSchedule"/>
         <TextView
             android:id="@+id/lblSubjectName"
             android:layout_width="wrap_content"
@@ -57,13 +57,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/lblSubjectName" />
         <TextView
-            android:id="@+id/lblProfessor"
+            android:id="@+id/lblSchedule"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="15dp"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Professor:"
+            android:text="Schedule:"
             android:textColor="#FFFFFF"
             android:textSize="10dp"
             app:layout_constraintStart_toStartOf="parent"
