@@ -41,7 +41,11 @@ public class SubjectsAvailableFragment extends Fragment {
 
         for (String subject : subjectList) {
             View itemView = getLayoutInflater().inflate(R.layout.layout_grade_panel, null);
+<<<<<<< HEAD
             //TextView titleTextView = itemView.findViewById(R.id.lblSubject);
+=======
+            TextView titleTextView = itemView.findViewById(R.id.lblSubject);
+>>>>>>> b5d2dc3 (malapit na q mamatai)
 
             // Set data to TextViews or views in the item layout
             //titleTextView.setText(subject); // Replace with actual data retrieval

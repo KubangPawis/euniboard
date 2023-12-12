@@ -138,6 +138,7 @@ public class RegisterSubject extends AppCompatActivity {
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(widthPX, heightPX);
 
+<<<<<<< HEAD
         if(availableSubjects != null && availableSubjects.moveToFirst()) {
             do {
                 int subjectCode_index = availableSubjects.getColumnIndex("subject_code");
@@ -148,6 +149,11 @@ public class RegisterSubject extends AppCompatActivity {
                 String subjectName = availableSubjects.getString(subjectName_index);
                 String sectionCode = availableSubjects.getString(sectionCode_index);
                 String subjectSchedule = availableSubjects.getString(subjectSchedule_index);
+=======
+        for (String subject : subjectList) {
+            View itemView = getLayoutInflater().inflate(R.layout.layout_grade_panel, null);
+            TextView titleTextView = itemView.findViewById(R.id.lblSubject);
+>>>>>>> b5d2dc3 (malapit na q mamatai)
 
                 View itemView = getLayoutInflater().inflate(R.layout.layout_subject_register, null);
 
