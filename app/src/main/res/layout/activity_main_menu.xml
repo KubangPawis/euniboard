@@ -376,7 +376,10 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <!-- PROFILE -->
+
+
             <ImageView
+                android:id="@+id/iconProfile"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginRight="40dp"
@@ -385,14 +388,16 @@
 
             <!-- HOME -->
             <ImageView
+                android:id="@+id/iconHome"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginRight="40dp"
                 android:clickable="true"
-                android:src="@drawable/home_icon" />
+                android:src="@drawable/home_selected" />
 
             <!-- NOTIFICATION -->
             <ImageView
+                android:id="@+id/iconNotification"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginRight="15dp"
