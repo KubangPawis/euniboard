@@ -21,6 +21,8 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     private static final String TB_FACULTY = "Faculty";
     private static final String TB_SUBJECTS = "Subjects";
     private static final String TB_ENROLLMENTS = "Enrollments";
+    private static final String TB_GRADES = "Grades";
+    private static final String TB_PAYMENTS = "Payments";
     private static final String COLUMN_STUDENT_ID = "student_id";
     private static final String COLUMN_LAST_NAME = "last_name";
     private static final String COLUMN_FIRST_NAME = "first_name";
@@ -55,6 +57,13 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     private static final String COLUMN_SUBJECT_SCHEDULE = "subject_schedule";
     private static final String COLUMN_SECTION_CODE = "section_code";
     private static final String COLUMN_ENROLLMENT_ID = "enrollment_id";
+    private static final String COLUMN_GRADE_ID = "grade_id";
+    private static final String COLUMN_GRADE = "grade";
+    private static final String COLUMN_PAYMENT_ID = "payment_id";
+    private static final String COLUMN_DATE_PAID = "date_paid";
+    private static final String COLUMN_BALANCE = "remaining_balance";
+    private static final String COLUMN_AMOUNT_PAID = "amount_paid";
+    private static final String COLUMN_PAYMENT_REMARKS = "payment_remarks";
 
     private String[] blockNames = {"Block 1", "Block 2"};
     private String[] subjectCodes = {"CP100", "CP101", "CSMAT100", "CSPY100", "ENG100", "EU111", "MAMW100", "NROTC1", "NSTP1",
@@ -94,6 +103,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_EMAIL + " TEXT UNIQUE, "
                 + COLUMN_PASSWORD + " TEXT, "
                 + COLUMN_YEAR_LEVEL + " INTEGER, "
+                + COLUMN_SEMESTER + " INTEGER, "
                 + COLUMN_PROGRAM + " TEXT, "
                 + COLUMN_SPECIALIZATION + " TEXT, "
                 + COLUMN_AGE + " INTEGER, "
@@ -118,7 +128,8 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + " (" + COLUMN_BLOCK_CODE + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_BLOCK_NAME + " TEXT, "
                 + COLUMN_SEMESTER + " INTEGER, "
-                + COLUMN_YEAR_LEVEL + " INTEGER)";
+                + COLUMN_YEAR_LEVEL + " INTEGER, "
+                + "FOREIGN KEY (semester) REFERENCES StudentInfo(semester)) ";
         db.execSQL(query);
     }
     public void createFaculty(SQLiteDatabase db) {
@@ -132,10 +143,12 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + " (" + COLUMN_SUBJECT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_SUBJECT_CODE + " TEXT, "
                 + COLUMN_SUBJECT_NAME + " TEXT, "
+                + COLUMN_SEMESTER + " INTEGER, "
                 + COLUMN_BLOCK_CODE + " INTEGER, "
                 + COLUMN_SUBJECT_SCHEDULE + " TEXT, "
                 + COLUMN_FACULTY_ID + " INTEGER, "
                 + COLUMN_SECTION_CODE + " TEXT, "
+                + "FOREIGN KEY (semester) REFERENCES StudentInfo(semester), "
                 + "FOREIGN KEY (block_code) REFERENCES BlockSection(block_code),"
                 + "FOREIGN KEY (faculty_id) REFERENCES Faculty(faculty_id)"
                 + ") ";
@@ -149,6 +162,30 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + "FOREIGN KEY (student_id) REFERENCES StudentInfo(student_id),"
                 + "FOREIGN KEY (block_code) REFERENCES BlockSection(block_code)"
                 + " )";
+        db.execSQL(query);
+    }
+    public void createGrades(SQLiteDatabase db) {
+        String query = "CREATE TABLE " + TB_GRADES
+                + " (" + COLUMN_GRADE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUMN_STUDENT_ID + " INTEGER, "
+                + COLUMN_SUBJECT_ID + " INTEGER, "
+                + COLUMN_GRADE + " REAL, "
+                + COLUMN_SEMESTER + " INTEGER, "
+                + "FOREIGN KEY (semester) REFERENCES StudentInfo(semester), "
+                + "FOREIGN KEY (student_id) REFERENCES StudentInfo(student_id),"
+                + "FOREIGN KEY (subject_id) REFERENCES Subjects(subject_id) )";
+        db.execSQL(query);
+    }
+    public void createPayments(SQLiteDatabase db) {
+        String query = "CREATE TABLE " + TB_PAYMENTS
+                + " (" + COLUMN_PAYMENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUMN_STUDENT_ID + " INTEGER, "
+                + COLUMN_DATE_PAID + " TEXT, "
+                + COLUMN_AMOUNT_PAID + " REAL, "
+                + COLUMN_BALANCE + " REAL, "
+                + COLUMN_PAYMENT_REMARKS + " TEXT, "
+                + COLUMN_SEMESTER + " INTEGER, "
+                + "FOREIGN KEY (student_id, semester) REFERENCES StudentInfo(student_id, semester) )";
         db.execSQL(query);
     }
     public void inputBlockValues(SQLiteDatabase db) {
