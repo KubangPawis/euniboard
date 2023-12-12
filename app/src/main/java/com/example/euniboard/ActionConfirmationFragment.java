@@ -20,11 +20,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
-public class OsasFragment extends Fragment {
-    public OsasFragment() {
+public class ActionConfirmationFragment extends Fragment {
+    public ActionConfirmationFragment() {
         // Required empty public constructor
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +36,7 @@ public class OsasFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         //BLUR BG METHOD
-        View rootView = inflater.inflate(R.layout.fragment_osas, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_action_confirmation, container, false);
 
         // Get the main activity's content as a bitmap
         Bitmap backgroundBitmap = getScreenShot(getActivity().getWindow().getDecorView().getRootView());
@@ -45,25 +47,17 @@ public class OsasFragment extends Fragment {
         // Create a layer drawable with the blurred bitmap and semi-transparent color
         Drawable[] layers = new Drawable[2];
         layers[0] = new BitmapDrawable(getResources(), blurredBitmap);
-        layers[1] = new ColorDrawable(Color.parseColor("#713232"));
+        layers[1] = new ColorDrawable(Color.parseColor("#F4F4F4"));
         LayerDrawable layerDrawable = new LayerDrawable(layers);
         layerDrawable.setAlpha(230);
         rootView.setBackground(layerDrawable);
 
         //EVENTS
-        ImageView btnClose = rootView.findViewById(R.id.btnClose);
-        Button btnCounseling = rootView.findViewById(R.id.btnCounseling);
-        Button btnRecords = rootView.findViewById(R.id.btnRecords);
-        Button btnPsych = rootView.findViewById(R.id.btnPsych);
-        Button btnExitInterview = rootView.findViewById(R.id.btnExitInterview);
-        Button btnSPS = rootView.findViewById(R.id.btnSPS);
+        Button btnYes = rootView.findViewById(R.id.btnYes);
+        Button btnNo = rootView.findViewById(R.id.btnNo);
 
-        btnClose.setOnClickListener(e -> exitFragment());
-        btnCounseling.setOnClickListener(e -> goToRedirect(e, "Counseling"));
-        btnRecords.setOnClickListener(e -> goToRedirect(e, "Student Records"));
-        btnPsych.setOnClickListener(e -> goToRedirect(e, "Psychological Test"));
-        btnExitInterview.setOnClickListener(e -> goToRedirect(e, "Exit Interview"));
-        btnSPS.setOnClickListener(e -> goToRedirect(e, "SPS Evaluation"));
+        btnYes.setOnClickListener(this::goToViewSubjects);
+        btnNo.setOnClickListener(this::goToViewGrades);
 
         return rootView;
     }
@@ -73,6 +67,7 @@ public class OsasFragment extends Fragment {
         view.setDrawingCacheEnabled(false);
         return screenshot;
     }
+
     public static Bitmap blurBitmap(Context context, Bitmap inputBitmap, float radius) {
         if (inputBitmap == null) return null;
 
@@ -92,12 +87,15 @@ public class OsasFragment extends Fragment {
 
         return outputBitmap;
     }
-    public void exitFragment() {
-        getActivity().onBackPressed();
+    public void confirmAction(View v) {
+        FragmentManager fragmentManager = getParentFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.fragment_container_view, fragment)
+                .addToBackStack(null)
+                .commit();
     }
-    public void goToRedirect(View v, String selection) {
-        Intent intent = new Intent(getActivity(), Redirect.class);
-        intent.putExtra("selection", selection);
-        startActivity(intent);
+
+    public void goBack(View v) {
+        getActivity().onBackPressed();
     }
 }
