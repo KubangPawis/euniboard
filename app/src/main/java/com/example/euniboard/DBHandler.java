@@ -130,8 +130,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + " (" + COLUMN_BLOCK_CODE + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_BLOCK_NAME + " TEXT, "
                 + COLUMN_SEMESTER + " INTEGER, "
-                + COLUMN_YEAR_LEVEL + " INTEGER, "
-                + "FOREIGN KEY (semester) REFERENCES StudentInfo(semester)) ";
+                + COLUMN_YEAR_LEVEL + " INTEGER) ";
         db.execSQL(query);
     }
     public void createFaculty(SQLiteDatabase db) {
@@ -150,7 +149,6 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_SUBJECT_SCHEDULE + " TEXT, "
                 + COLUMN_FACULTY_ID + " INTEGER, "
                 + COLUMN_SECTION_CODE + " TEXT, "
-                + "FOREIGN KEY (semester) REFERENCES StudentInfo(semester), "
                 + "FOREIGN KEY (block_code) REFERENCES BlockSection(block_code),"
                 + "FOREIGN KEY (faculty_id) REFERENCES Faculty(faculty_id)"
                 + ") ";
@@ -173,7 +171,6 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_SUBJECT_ID + " INTEGER, "
                 + COLUMN_GRADE + " REAL, "
                 + COLUMN_SEMESTER + " INTEGER, "
-                + "FOREIGN KEY (semester) REFERENCES StudentInfo(semester), "
                 + "FOREIGN KEY (student_id) REFERENCES StudentInfo(student_id),"
                 + "FOREIGN KEY (subject_id) REFERENCES Subjects(subject_id) )";
         db.execSQL(query);
@@ -186,8 +183,7 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_AMOUNT_PAID + " REAL, "
                 + COLUMN_BALANCE + " REAL, "
                 + COLUMN_PAYMENT_REMARKS + " TEXT, "
-                + COLUMN_SEMESTER + " INTEGER, "
-                + "FOREIGN KEY (student_id, semester) REFERENCES StudentInfo(student_id, semester) )";
+                + COLUMN_SEMESTER + " INTEGER)";
         db.execSQL(query);
     }
     public void inputBlockValues(SQLiteDatabase db) {
