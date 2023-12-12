@@ -9,12 +9,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
@@ -25,8 +19,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class SubjectsFragment extends Fragment {
-    public SubjectsFragment() {
+import androidx.fragment.app.Fragment;
+
+public class FacultyFragment extends Fragment {
+    public FacultyFragment() {
         // Required empty public constructor
     }
 
@@ -39,7 +35,7 @@ public class SubjectsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         //BLUR BG METHOD
-        View rootView = inflater.inflate(R.layout.fragment_subjects, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_faculty, container, false);
 
         // Get the main activity's content as a bitmap
         Bitmap backgroundBitmap = getScreenShot(getActivity().getWindow().getDecorView().getRootView());
@@ -57,11 +53,9 @@ public class SubjectsFragment extends Fragment {
 
         //EVENTS
         ImageView btnClose = rootView.findViewById(R.id.btnClose);
-        Button btnViewSubjects = rootView.findViewById(R.id.btnViewSubjects);
-        Button btnViewGrades = rootView.findViewById(R.id.btnViewGrades);
+        Button btnViewFaculty = rootView.findViewById(R.id.btnViewFaculty);
         btnClose.setOnClickListener(e -> exitFragment());
-        btnViewSubjects.setOnClickListener(this::goToViewSubjects);
-        btnViewGrades.setOnClickListener(this::goToViewGrades);
+        btnViewFaculty.setOnClickListener(this::goToViewFaculty);
 
         return rootView;
     }
@@ -91,13 +85,8 @@ public class SubjectsFragment extends Fragment {
 
         return outputBitmap;
     }
-    public void goToViewSubjects(View v) {
-        Intent intent = new Intent(getActivity(), ViewSubjects.class);
-        startActivity(intent);
-    }
-
-    public void goToViewGrades(View v) {
-        Intent intent = new Intent(getActivity(), ViewGrades.class);
+    public void goToViewFaculty(View v) {
+        Intent intent = new Intent(getActivity(), ViewFaculty.class);
         startActivity(intent);
     }
 

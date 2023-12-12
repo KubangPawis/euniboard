@@ -18,28 +18,36 @@ public class MainMenu extends AppCompatActivity {
 
         //EVENTS
         FrameLayout btnSubjects = findViewById(R.id.btnSubjects);
+        FrameLayout btnFaculty = findViewById(R.id.btnFaculty);
         FrameLayout btnPayment = findViewById(R.id.btnPayment);
         FrameLayout btnOSAS = findViewById(R.id.btnOSAS);
         TextView boxSubj = findViewById(R.id.boxSubj);
+        TextView boxFaculty = findViewById(R.id.boxFaculty);
         TextView boxPay = findViewById(R.id.boxPay);
         TextView boxOSAS = findViewById(R.id.boxOSAS);
         TextView lblSubj = findViewById(R.id.lblSubjects);
+        TextView lblFaculty = findViewById(R.id.lblFaculty);
         TextView lblPayment = findViewById(R.id.lblPayment);
         TextView lblOSAS = findViewById(R.id.lblOSAS);
         ImageView imgSubj = findViewById(R.id.imgSubj);
+        ImageView imgFaculty = findViewById(R.id.imgFaculty);
         ImageView imgPay = findViewById(R.id.imgPay);
         ImageView imgOSAS = findViewById(R.id.imgOSAS);
 
         btnSubjects.setOnClickListener(this::openSubjects);
+        btnFaculty.setOnClickListener(this::openFaculty);
         btnPayment.setOnClickListener(this::openPayment);
         btnOSAS.setOnClickListener(this::openOSAS);
         boxSubj.setOnClickListener(this::openSubjects);
+        boxFaculty.setOnClickListener(this::openFaculty);
         boxPay.setOnClickListener(this::openPayment);
         boxOSAS.setOnClickListener(this::openOSAS);
         lblSubj.setOnClickListener(this::openSubjects);
+        lblFaculty.setOnClickListener(this::openFaculty);
         lblPayment.setOnClickListener(this::openPayment);
         lblOSAS.setOnClickListener(this::openOSAS);
         imgSubj.setOnClickListener(this::openSubjects);
+        imgFaculty.setOnClickListener(this::openFaculty);
         imgPay.setOnClickListener(this::openPayment);
         imgOSAS.setOnClickListener(this::openOSAS);
     }
@@ -48,6 +56,13 @@ public class MainMenu extends AppCompatActivity {
         SubjectsFragment subjectFragment = new SubjectsFragment();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.screenLayout, subjectFragment)
+                .addToBackStack(null)
+                .commit();
+    }
+    public void openFaculty(View v) {
+        FacultyFragment facultyFragment = new FacultyFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.screenLayout, facultyFragment)
                 .addToBackStack(null)
                 .commit();
     }

@@ -18,8 +18,7 @@ public class GradesAvailableFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        //BLUR BG METHOD
+        
         View rootView = inflater.inflate(R.layout.fragment_grades_available, container, false);
         return rootView;
     }
