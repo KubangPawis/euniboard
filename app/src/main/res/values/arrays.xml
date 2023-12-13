@@ -30,4 +30,26 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
+
+    <string-array name="payment_sy">
+        <item></item>
+        <item>2023-2024</item>
+    </string-array>
+
+    <string-array name="payment_sem">
+        <item></item>
+        <item>1st Semester</item>
+        <item>2nd Semester</item>
+    </string-array>
+
+    <string-array name="payment_type">
+        <item></item>
+        <item>Tuition Fees</item>
+    </string-array>
+
+    <string-array name="payment_for">
+        <item></item>
+        <item>Down Payment</item>
+        <item>Cash</item>
+    </string-array>
 </resources>

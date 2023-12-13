@@ -48,12 +48,12 @@
         app:layout_constraintRight_toRightOf="@id/lblTitlePayment"/>
 
     <Button
-        android:id="@+id/btnProof"
+        android:id="@+id/btnPayTuition"
         android:layout_width="232dp"
         android:layout_height="50dp"
         android:layout_marginTop="70dp"
         android:background="@drawable/btn_white_rounded_drop"
-        android:text="Payment Proof List"
+        android:text="Pay Tuition"
         android:textAllCaps="false"
         android:textColor="#692626"
         android:fontFamily="@font/raleway_semibold"
@@ -71,8 +71,8 @@
         android:textAllCaps="false"
         android:textColor="#692626"
         android:fontFamily="@font/raleway_semibold"
-        app:layout_constraintTop_toBottomOf="@id/btnProof"
-        app:layout_constraintLeft_toLeftOf="@id/btnProof"
-        app:layout_constraintRight_toRightOf="@id/btnProof"/>
+        app:layout_constraintTop_toBottomOf="@id/btnPayTuition"
+        app:layout_constraintLeft_toLeftOf="@id/btnPayTuition"
+        app:layout_constraintRight_toRightOf="@id/btnPayTuition"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

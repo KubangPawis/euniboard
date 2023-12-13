@@ -1,6 +1,7 @@
 package com.example.euniboard;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -41,6 +42,11 @@ public class PaymentFragment extends Fragment {
         btnClose.setOnClickListener(e -> exitFragment());
 
         return rootView;
+    }
+    public void goToPayment(CurrentStudent loggedStudent) {
+        Intent intent = new Intent(getActivity(), ViewGrades.class);
+        intent.putExtra("currently_logged_student", loggedStudent);
+        startActivity(intent);
     }
     public void exitFragment() {
         getActivity().onBackPressed();

@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/pnlHeader">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnPayTuition"
             android:layout_width="140dp"
             android:layout_height="40dp"
             android:layout_marginTop="35dp"
@@ -310,23 +310,49 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title_dateOfPayment" />
 
-        <EditText
-            android:id="@+id/editableContactNumber"
-            android:layout_width="330dp"
+        <TextView
+            android:id="@+id/txtStudentName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="130dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"></EditText>
+            android:layout_marginStart="30dp"
+            android:text="Student name here..."
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/line2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_studentName" />
 
-        <EditText
-            android:id="@+id/editableDateOfPayment"
-            android:layout_width="330dp"
+        <TextView
+            android:id="@+id/txtStudentNumber"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="70dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"></EditText>
+            android:layout_marginStart="30dp"
+            android:text="Student number here..."
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/line1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_studentNumber" />
+
+        <TextView
+            android:id="@+id/txtContactNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="Contact number here..."
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/line3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_contactNumber" />
+
+        <TextView
+            android:id="@+id/txtPaymentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="Date of pament here..."
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/line4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_dateOfPayment" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

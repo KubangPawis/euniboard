@@ -94,6 +94,7 @@ public class RegisterSubject extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("I GOT HERE!!", "I got here");
                 addToEnrollment(writable_db, studentID, selectedBlockCode);
+                addToPayment(writable_db, studentID, semester);
             }
         });
     }
@@ -186,6 +187,21 @@ public class RegisterSubject extends AppCompatActivity {
         values.put("student_id", studentID);
         values.put("block_code", blockCode);
         long newStudentId = db.insert("Enrollments", null, values);
+        if (newStudentId != -1) {
+            Log.d("ENROLLMENT SUCCESSFUL", "Enrollment successful!");
+        } else {
+            Log.d("ENROLLMENT FAILED", "Enrollment failed.");
+        }
+    }
+    public void addToPayment(SQLiteDatabase db, int studentID, int semester) {
+        ContentValues values = new ContentValues();
+        values.put("student_id", studentID);
+        values.put("date_paid", "N/A");
+        values.put("amount_paid", "N/A");
+        values.put("remaining_balance", 40000);
+        values.put("payment_remarks", "N/A");
+        values.put("semester", semester);
+        long newStudentId = db.insert("Payments", null, values);
         if (newStudentId != -1) {
             Log.d("ENROLLMENT SUCCESSFUL", "Enrollment successful!");
         } else {
