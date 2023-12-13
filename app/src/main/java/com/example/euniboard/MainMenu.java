@@ -47,6 +47,8 @@ public class MainMenu extends AppCompatActivity {
         ImageView imgFaculty = findViewById(R.id.imgFaculty);
         ImageView imgPay = findViewById(R.id.imgPay);
         ImageView imgOSAS = findViewById(R.id.imgOSAS);
+        ImageView iconProfile = findViewById(R.id.iconProfile);
+
 
         btnSubjects.setOnClickListener(e -> openSubjects(e, loggedStudent));
         btnFaculty.setOnClickListener(e -> openFaculty(e, loggedStudent));
