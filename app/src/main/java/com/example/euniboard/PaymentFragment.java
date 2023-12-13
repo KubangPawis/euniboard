@@ -41,6 +41,8 @@ public class PaymentFragment extends Fragment {
         CurrentStudent loggedStudent = args.getParcelable("currently_logged_student"); //Pass in data to the current fragment
 
         Button btnPayTuition = rootView.findViewById(R.id.btnPayTuition);
+        Button btnLedger = rootView.findViewById(R.id.btnLedger);
+        btnLedger.setOnClickListener(e -> goToLedger(loggedStudent));
         btnPayTuition.setOnClickListener(e -> goToPayment(loggedStudent));
         btnClose.setOnClickListener(e -> exitFragment());
 
@@ -48,6 +50,11 @@ public class PaymentFragment extends Fragment {
     }
     public void goToPayment(CurrentStudent loggedStudent) {
         Intent intent = new Intent(getActivity(), PayTuition.class);
+        intent.putExtra("currently_logged_student", loggedStudent);
+        startActivity(intent);
+    }
+    public void goToLedger(CurrentStudent loggedStudent) {
+        Intent intent = new Intent(getActivity(), PayLedger.class);
         intent.putExtra("currently_logged_student", loggedStudent);
         startActivity(intent);
     }

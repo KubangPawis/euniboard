@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -37,6 +39,7 @@
         <activity android:name=".ViewFaculty" android:screenOrientation="portrait"/>
         <activity android:name=".RegisterSubject" android:screenOrientation="portrait"/>
         <activity android:name=".PayTuition" android:screenOrientation="portrait"/>
+        <activity android:name=".PayLedger" android:screenOrientation="portrait"/>
         <activity android:name=".ConfirmPayment" android:screenOrientation="portrait"/>
         <activity android:name=".Redirect" android:screenOrientation="portrait"/>
 
