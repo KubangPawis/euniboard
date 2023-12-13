@@ -16,6 +16,7 @@ import android.renderscript.ScriptIntrinsicBlur;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
@@ -39,12 +40,14 @@ public class PaymentFragment extends Fragment {
         Bundle args = getArguments();
         CurrentStudent loggedStudent = args.getParcelable("currently_logged_student"); //Pass in data to the current fragment
 
+        Button btnPayTuition = rootView.findViewById(R.id.btnPayTuition);
+        btnPayTuition.setOnClickListener(e -> goToPayment(loggedStudent));
         btnClose.setOnClickListener(e -> exitFragment());
 
         return rootView;
     }
     public void goToPayment(CurrentStudent loggedStudent) {
-        Intent intent = new Intent(getActivity(), ViewGrades.class);
+        Intent intent = new Intent(getActivity(), PayTuition.class);
         intent.putExtra("currently_logged_student", loggedStudent);
         startActivity(intent);
     }

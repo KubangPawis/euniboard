@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,7 +20,6 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class PayTuition extends AppCompatActivity {
-
     private String studentName, contactNumber, currentDate, schoolYear, semester, paymentType, paymentFor;
     private int studentID;
     private double amounts_payable;
@@ -33,6 +33,8 @@ public class PayTuition extends AppCompatActivity {
         payStudent = new StudentHandler(this);
         SQLiteDatabase readable_db = payStudent.getReadableDatabase();
 
+        Log.d("ERROR CHECK", "CHECK #1");
+
         Intent intent = getIntent();
         CurrentStudent loggedStudent = intent.getParcelableExtra("currently_logged_student");
         studentID = loggedStudent.getStudentID();
@@ -42,6 +44,9 @@ public class PayTuition extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         currentDate = dateFormat.format(calendar.getTime());
+
+        Log.d("ERROR CHECK", "CHECK #2");
+
 
         Spinner cmbSY = findViewById(R.id.cmbSY);
         Spinner cmbSem = findViewById(R.id.cmbSem);
@@ -54,7 +59,8 @@ public class PayTuition extends AppCompatActivity {
         Button btnPay = findViewById(R.id.btnPayTuition);
         setAmountsPayable(readable_db, studentID);
 
-        txtStudentNumber.setText(studentID);
+        Log.d("ERROR CHECK", "CHECK #3");
+        txtStudentNumber.setText(String.valueOf(studentID));
         txtStudentName.setText(studentName);
         txtContactNumber.setText(contactNumber);
         txtPaymentDate.setText(currentDate);
@@ -64,7 +70,7 @@ public class PayTuition extends AppCompatActivity {
         setSpinPaymentType();
         setSpinPaymentFor();
 
-        btnPay.setOnClickListener(e -> goToConfirmPayment());
+        btnPay.setOnClickListener(e -> goToConfirmPayment(loggedStudent));
         cmbSY.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -113,7 +119,7 @@ public class PayTuition extends AppCompatActivity {
         }
         cursor.close();
         amounts_payable = balance;
-        String payableText = "₱" + String.format("₱%,.2f", balance);
+        String payableText = String.format("₱%,.2f", balance);
         txtPayable.setText(payableText);
     }
 
@@ -161,8 +167,9 @@ public class PayTuition extends AppCompatActivity {
         spinYear.setBackground(ContextCompat.getDrawable(this, R.drawable.spinner_arrow));
         spinYear.setAdapter(yearAdapter);
     }
-    public void goToConfirmPayment() {
+    public void goToConfirmPayment(CurrentStudent loggedStudent) {
         Intent intent = new Intent(this, ConfirmPayment.class);
+        intent.putExtra("currently_logged_student", loggedStudent);
         intent.putExtra("student_id", studentID);
         intent.putExtra("student_name", studentName);
         intent.putExtra("student_contact_number", contactNumber);
@@ -171,6 +178,7 @@ public class PayTuition extends AppCompatActivity {
         intent.putExtra("semester", semester);
         intent.putExtra("payment_type", paymentType);
         intent.putExtra("payment_for", paymentFor);
+        intent.putExtra("balance", amounts_payable);
         startActivity(intent);
     }
 
