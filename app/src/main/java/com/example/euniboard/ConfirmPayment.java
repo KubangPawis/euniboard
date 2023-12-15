@@ -53,8 +53,6 @@ public class ConfirmPayment extends AppCompatActivity {
         Log.d("VALUE CHECK", paymentFor);
         Log.d("VALUE CHECK", String.valueOf(balance));
 
-        Log.d("ERROR CHECK", "It got here!");
-
         TextView lblStudentNumber = findViewById(R.id.lbl_student_number);
         TextView lblStudentName = findViewById(R.id.lbl_student_name);
         TextView lblContactNumber = findViewById(R.id.lbl_contact_number);
@@ -63,12 +61,15 @@ public class ConfirmPayment extends AppCompatActivity {
         TextView lblPaymentFor = findViewById(R.id.lblPaymentFor);
         TextView lblPaymentDate = findViewById(R.id.lblPaymentDate);
         TextView lblAmountPayable = findViewById(R.id.lblAmountPayable);
-        EditText editableCashPayment = findViewById(R.id.editableCashPayment);
 
         Log.d("ERROR CHECK", "It got here!");
 
-        payment = Double.parseDouble(String.valueOf(editableCashPayment.getText()));
+        payment = 4000;
         remainingBalance = balance - payment;
+
+        Log.d("ERROR CHECK", "Payment: " + payment);
+        Log.d("ERROR CHECK", "Balance: " + remainingBalance);
+
 
         lblStudentNumber.setText(String.valueOf(studentID));
         lblStudentName.setText(studentName);
