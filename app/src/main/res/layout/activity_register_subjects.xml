@@ -20,14 +20,16 @@
         android:id="@+id/lblTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/mainArea">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/subjects_top_icon"
             app:layout_constraintEnd_toStartOf="@id/lblRegisterSubjects"
@@ -37,7 +39,7 @@
             android:id="@+id/lblRegisterSubjects"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+
             android:fontFamily="@font/montserrat_black"
             android:text="Register Subjects"
             android:textColor="#FFFFFF"
@@ -53,7 +55,7 @@
             android:fontFamily="@font/montserrat_medium"
             android:text="Year: 1st Year"
             android:textColor="#FFFFFF"
-            android:textSize="16dp"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/lblRegisterSubjects"
@@ -103,10 +105,9 @@
     </LinearLayout>
 
     <FrameLayout
+        android:id="@+id/mainArea"
         android:layout_width="350dp"
-        android:layout_height="600dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_height="500dp"
         android:background="@drawable/btn_white_rounded_drop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -149,7 +150,7 @@
                 android:id="@+id/line_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/register_line_vertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

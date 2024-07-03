@@ -67,8 +67,8 @@ public abstract class DBHandler extends SQLiteOpenHelper {
 
     private String[] blockNames = {"Block 1", "Block 2"};
     private String[] subjectCodes = {"CP100", "CP101", "CSMAT100", "CSPY100", "ENG100", "EU111", "MAMW100", "NROTC1", "NSTP1",
-                                    "PE01", "SOC100", "COM100", "CP102", "CSDS101", "CSMAT101", "EU112", "NROTC2", "NSTP2",
-                                    "PE02", "SOC101", "CP103", "CSDS102", "CSMAT102", "CSNC101", "CSOP01", "HUM100", "PE03", "SOC102"};
+            "PE01", "SOC100", "COM100", "CP102", "CSDS101", "CSMAT101", "EU112", "NROTC2", "NSTP2",
+            "PE02", "SOC101", "CP103", "CSDS102", "CSMAT102", "CSNC101", "CSOP01", "HUM100", "PE03", "SOC102"};
     private String[] subjectNames = {"Introduction to Computing", "Computer Programming 1",
             "Pre-Calculus for Non STEM", "General Physics for Non STEM", "English Enhancement Course", "The University and I",
             "Mathematics in the Modern World", "Naval Res Officer Trng Course 1", "National Service Training Program 1",
@@ -87,7 +87,6 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         createStudentInfoTable(db);
-<<<<<<< HEAD
         createBlockSection(db);
         createFaculty(db);
         createSubject(db);
@@ -122,8 +121,6 @@ public abstract class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_SHS_SCHOOL + " TEXT, "
                 + COLUMN_SHS_GRADE + " DOUBLE)";
         db.execSQL(query);
-=======
->>>>>>> 77beac9 (wutdahel omahgad nowayay~)
     }
     public void createBlockSection(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TB_BLOCK_SECTION
@@ -205,14 +202,14 @@ public abstract class DBHandler extends SQLiteOpenHelper {
         }
     }
     public void inputSubjectValues(SQLiteDatabase db, String inputSubjCode, String inputSubjName, int inputBlockCode, String inputSubjSched, int facultyId, String inputSectionCode) {
-            String query = "INSERT INTO " + TB_SUBJECTS
-                    + " (" + COLUMN_SUBJECT_CODE + ", " + COLUMN_SUBJECT_NAME + ", "
-                    + COLUMN_BLOCK_CODE + ", " + COLUMN_SUBJECT_SCHEDULE + ", "
-                    + COLUMN_FACULTY_ID + ", " + COLUMN_SECTION_CODE + ") VALUES"
-                    + " (" + inputSubjCode + ", " + inputSubjName + ", "
-                    + inputBlockCode + ", " + inputSubjSched + ", "
-                    + facultyId + ", " + inputSectionCode + ");";
-            db.execSQL(query);
+        String query = "INSERT INTO " + TB_SUBJECTS
+                + " (" + COLUMN_SUBJECT_CODE + ", " + COLUMN_SUBJECT_NAME + ", "
+                + COLUMN_BLOCK_CODE + ", " + COLUMN_SUBJECT_SCHEDULE + ", "
+                + COLUMN_FACULTY_ID + ", " + COLUMN_SECTION_CODE + ") VALUES"
+                + " (" + inputSubjCode + ", " + inputSubjName + ", "
+                + inputBlockCode + ", " + inputSubjSched + ", "
+                + facultyId + ", " + inputSectionCode + ");";
+        db.execSQL(query);
     }
     public void inputEnrollmentValues(SQLiteDatabase db, int inputStudentId, int inputBlockCode) {
         String query = "INSERT INTO " + TB_ENROLLMENTS
@@ -223,110 +220,4 @@ public abstract class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
-<<<<<<< HEAD
-
-    public void createStudentInfoTable(SQLiteDatabase db) {
-        String query = "CREATE TABLE " + TABLE_NAME +
-                " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_LAST_NAME + " TEXT, " +
-                COLUMN_FIRST_NAME + " TEXT, " +
-                COLUMN_MIDDLE_NAME + " TEXT, " +
-                COLUMN_BIRTH_DATE + " TEXT, " +
-                COLUMN_EMAIL + " TEXT UNIQUE, " +
-                COLUMN_PASSWORD + " TEXT, " +
-                COLUMN_YEAR_LEVEL + " INTEGER, " +
-                COLUMN_PROGRAM + " TEXT, " +
-                COLUMN_SPECIALIZATION + " TEXT, " +
-                COLUMN_AGE + " INTEGER, " +
-                COLUMN_SEX + " TEXT, " +
-                COLUMN_RELIGION + " TEXT, " +
-                COLUMN_CITIZENSHIP + " TEXT, " +
-                COLUMN_FULL_ADDRESS + " TEXT, " +
-                COLUMN_ZIP_CODE + " TEXT, " +
-                COLUMN_MOBILE_NUMBER + " TEXT, " +
-                COLUMN_ELEM_SCHOOL + " TEXT, " +
-                COLUMN_ELEM_GRADE + " DOUBLE, " +
-                COLUMN_JHS_SCHOOL + " TEXT, " +
-                COLUMN_JHS_GRADE + " DOUBLE, " +
-                COLUMN_SHS_SCHOOL + " TEXT, " +
-                COLUMN_SHS_GRADE + " DOUBLE" +
-                ")";
-        db.execSQL(query);
-    }
-    private void createSubjectBlockTable(SQLiteDatabase db) {
-        String createTableSQL = "CREATE TABLE SubjectBlock (" +
-                "BlockID INTEGER PRIMARY KEY," +
-                "BlockName TEXT" +
-                ")";
-        db.execSQL(createTableSQL);
-    }
-    private void createSubjectEnrollmentTable(SQLiteDatabase db) {
-        String createTableSQL = "CREATE TABLE SubjectEnrollment (" +
-                "EnrollmentID INTEGER PRIMARY KEY," +
-                "Email TEXT," +
-                "BlockID INTEGER," +
-                "SubjectName TEXT," +
-                "FOREIGN KEY (Email) REFERENCES StudentInfo(Email)," +
-                "FOREIGN KEY (BlockID) REFERENCES SubjectBlock(BlockID)" +
-                ")";
-        db.execSQL(createTableSQL);
-    }
-    private void createScheduleTable(SQLiteDatabase db) {
-        String createTableSQL = "CREATE TABLE Schedule (" +
-                "ScheduleID INTEGER PRIMARY KEY," +
-                "BlockID INTEGER," +
-                "SubjectName TEXT," +
-                "DayOfWeek TEXT," +
-                "StartTime TEXT," +
-                "EndTime TEXT," +
-                // Other schedule details
-                "FOREIGN KEY (BlockID) REFERENCES SubjectBlock(BlockID)" +
-                ")";
-        db.execSQL(createTableSQL);
-    }
-
-    private void createProfessorTable(SQLiteDatabase db) {
-        String createTableSQL = "CREATE TABLE Professor (" +
-                "ProfessorID INTEGER PRIMARY KEY," +
-                "ProfessorName TEXT" +
-                ")";
-        db.execSQL(createTableSQL);
-    }
-
-
-
-    public void exportDatabase(@Nullable Context context) {
-        try {
-            File dbFile = context.getDatabasePath("EnvergaInfo.db"); // Replace with your database name
-            FileInputStream fis = new FileInputStream(dbFile);
-
-            String exportDir = Environment.getExternalStorageDirectory() + File.separator + "YourAppFolder"; // Replace with your folder name
-            File directory = new File(exportDir);
-
-            if (!directory.exists()) {
-                directory.mkdirs();
-            }
-
-            String backupPath = exportDir + File.separator + "exported_database.db"; // Replace with the desired exported database file name
-            FileOutputStream fos = new FileOutputStream(backupPath);
-
-            byte[] buffer = new byte[1024];
-            int length;
-            while ((length = fis.read(buffer)) > 0) {
-                fos.write(buffer, 0, length);
-            }
-
-            fos.flush();
-            fos.close();
-            fis.close();
-
-            // Show a message or log indicating successful export
-            Toast.makeText(context, "Database exported to: " + backupPath, Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            e.printStackTrace();
-            // Handle the exception
-        }
-    }
-=======
->>>>>>> 03d1c9d (wutdahel omahgad nowayay~)
 }

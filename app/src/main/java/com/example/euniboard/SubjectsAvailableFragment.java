@@ -48,15 +48,6 @@ public class SubjectsAvailableFragment extends Fragment {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(widthPX, heightPX);
         layoutParams.setMargins(0,0,0,60);
 
-<<<<<<< HEAD
-        for (String subject : subjectList) {
-            View itemView = getLayoutInflater().inflate(R.layout.layout_grade_panel, null);
-<<<<<<< HEAD
-            //TextView titleTextView = itemView.findViewById(R.id.lblSubject);
-=======
-            TextView titleTextView = itemView.findViewById(R.id.lblSubject);
->>>>>>> b5d2dc3 (malapit na q mamatai)
-=======
         if(studentBlockSubjects != null && studentBlockSubjects.moveToFirst()) {
             do {
                 Log.d("SUBJECT CHECK", "One ping!");
@@ -66,7 +57,6 @@ public class SubjectsAvailableFragment extends Fragment {
                 String subjectName = studentBlockSubjects.getString(subjectName_index);
                 String sectionCode = studentBlockSubjects.getString(sectionCode_index);
                 String subjectSchedule = studentBlockSubjects.getString(subjectSchedule_index);
->>>>>>> a15c356 (wutdahel omahgad nowayay~)
 
                 View itemView = getLayoutInflater().inflate(R.layout.layout_subject_panel, null);
 
